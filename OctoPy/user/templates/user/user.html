@@ -1,0 +1,665 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Home</title>
+    <!-- Favicons -->
+    <link href="{% static 'user/assets/img/Components/octopy-icon.png' %}" rel="icon">
+    <link href="{% static 'user/assets/img/Components/octopy-icon.png' %}" rel="apple-touch-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'user/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'user/css/mdb.min.css' %}" rel="stylesheet">
+  <style>
+
+  </style>
+
+</head>
+
+<body class="homepage-v1 hidden-sn white-skin animated"style="background-color: white;">
+
+  <!-- Navigation -->
+  <header>
+
+    <!-- Sidebar navigation -->
+    <ul id="slide-out" class="side-nav custom-scrollbar">
+
+      <!-- Logo -->
+      <li>
+
+        <div class="logo-wrapper waves-light">
+
+          <a href="#">
+
+            <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
+
+          </a>
+
+        </div>
+
+      </li>
+      <!-- Logo -->
+
+      <!-- Social -->
+      <li>
+
+        <ul class="social">
+
+          <li>
+
+            <a class="fb-ic">
+
+              <i class="fab fa-facebook-f"> </i>
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a class="pin-ic">
+
+              <i class="fab fa-pinterest"> </i>
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a class="gplus-ic">
+
+              <i class="fab fa-google-plus-g"> </i>
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a class="tw-ic">
+
+              <i class="fab fa-twitter"> </i>
+
+            </a>
+
+          </li>
+
+        </ul>
+
+      </li>
+      <!-- Social -->
+
+      <!-- Search Form -->
+      <li>
+
+        <form class="search-form" role="search">
+
+          <div class="form-group md-form mt-0 pt-1 waves-light">
+
+            <input type="text" class="form-control" placeholder="Search">
+
+          </div>
+
+        </form>
+
+      </li>
+      <!-- Search Form -->
+
+      <!-- Side navigation links -->
+      <li>
+
+        <ul class="collapsible collapsible-accordion">
+
+          <li>
+
+            <a class="collapsible-header waves-effect arrow-r">
+
+              <i class="fas fa-shopping-cart"></i> Cart page
+
+              <i class="fas fa-angle-down rotate-icon"></i>
+
+            </a>
+
+            <div class="collapsible-body">
+
+              <ul>
+
+                <li>
+
+                  <a href="../cart/cart-v1.html" class="waves-effect">Cart V.1</a>
+
+                </li>
+
+                <li>
+
+                  <a href="../cart/cart-v2.html" class="waves-effect">Cart V.2</a>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <a class="collapsible-header waves-effect arrow-r">
+
+              <i class="far fa-hand-pointer"></i> Category page
+
+              <i class="fas fa-angle-down rotate-icon"></i>
+
+            </a>
+
+            <div class="collapsible-body">
+
+              <ul>
+
+                <li>
+
+                  <a href="../category/category-v1.html" class="waves-effect">Category V.1</a>
+
+                </li>
+
+                <li>
+
+                  <a href="../category/category-v2.html" class="waves-effect">Category V.2</a>
+
+                </li>
+
+                <li>
+
+                  <a href="../category/category-v3.html" class="waves-effect">Category V.3</a>
+
+                </li>
+
+                <li>
+
+                  <a href="../category/category-v4.html" class="waves-effect">Category V.4</a>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <a class="collapsible-header waves-effect arrow-r">
+
+              <i class="far fa-bookmark"></i> Homepage
+
+              <i class="fas fa-angle-down rotate-icon"></i>
+
+            </a>
+
+            <div class="collapsible-body">
+
+              <ul>
+
+                <li>
+
+                  <a href="../homepage/homepage-v1.html" class="waves-effect">Homepage V.1</a>
+
+                </li>
+
+                <li>
+
+                  <a href="../homepage/homepage-v2.html" class="waves-effect">Homepage V.2</a>
+
+                </li>
+
+                <li>
+
+                  <a href="../homepage/homepage-v3.html" class="waves-effect">Homepage V.3</a>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <a class="collapsible-header waves-effect arrow-r">
+
+              <i class="fas fa-camera-retro"></i> Product page
+
+              <i class="fas fa-angle-down rotate-icon"></i>
+
+            </a>
+
+            <div class="collapsible-body">
+
+              <ul>
+
+                <li>
+
+                  <a href="../product/product-v1.html" class="waves-effect">Product V.1</a>
+
+                </li>
+
+                <li>
+
+                  <a href="../product/product-v2.html" class="waves-effect">Product V.2</a>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <a href="../contact/contact.html" class="collapsible-header waves-effect">
+
+              <i class="fas fa-envelope"></i> Contact</a>
+
+          </li>
+
+        </ul>
+
+      </li>
+
+      <!-- Side navigation links -->
+      <div class="sidenav-bg mask-strong"></div>
+
+    </ul>
+    <!-- Sidebar navigation -->
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg  navbar-light scrolling-navbar white">
+
+      <div class="container">
+
+        <!-- SideNav slide-out button -->
+        <div class="float-left mr-2">
+
+          <a href="#" data-activates="slide-out" class="button-collapse">
+
+            <i class="fas fa-bars"></i>
+
+          </a>
+
+        </div>
+
+        <a class="navbar-brand font-weight-bold" href="#">
+
+          <strong>OctoPy</strong>
+
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+          aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item dropdown notifications-nav">
+              <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="badge red">3</span> <i class="fas fa-bell blue-text"></i>
+                <span class="d-none d-md-inline-block font-weight-bold">Notifications</span>
+              </a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">
+                  <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                  <span>New order received</span>
+                  <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 13 min</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                  <span>New order received</span>
+                  <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 33 min</span>
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>
+                  <span>Your campaign is about to end</span>
+                  <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 53 min</span>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect"><i class="fas fa-envelope blue-text"></i> <span
+                  class="clearfix d-none d-sm-inline-block font-weight-bold">Contact</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect"><i class="fas fa-comments blue-text"></i> <span
+                  class="clearfix d-none d-sm-inline-block font-weight-bold">Support</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user blue-text"></i> <span class="clearfix d-none d-sm-inline-block font-weight-bold">Profile</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <form method="POST"  autocomplete="off" enctype="multipart/form-data" id="logoutButton" action="logout">
+                  {% csrf_token %}
+                <a class="dropdown-item">Logout</a>
+                </form>
+                <a class="dropdown-item" href="#">My account</a>
+              </div>
+            </li>
+  
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </nav>
+    <!-- Navbar -->
+
+  </header>
+  <!-- Navigation -->
+
+  <!-- Intro -->
+ <section>
+
+ </section>
+  <!-- Intro -->
+
+  <!-- Main Container -->
+  <div class="container" >
+    <main>
+      <div class="row">
+        <div class="col-md-12 center-block mb-5 col-sm-4">
+          <center>
+            <!-- <div class="spinner-border blue-text" role="status" ></div> -->
+            <div class="row justify-content-center">
+              <img src="{% static 'user/img/user.png' %}" style="height: 600px; width: 5000px;">
+            </div>
+            <div class="row justify-content-center">
+              <button type="button" class="btn btn-info btn-rounded">Request for Upgrade</button>
+            </div>
+          </center>
+      </div>
+    </main>
+   
+  </div>
+  <!-- Main Container -->
+
+  <!-- Footer -->
+  <footer class="page-footer text-center text-md-left stylish-color-dark pt-0">
+
+    <div style="background-color: #4285f4;">
+
+      <div class="container">
+
+        <!-- Grid row -->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+
+            <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic ml-0 px-2">
+
+              <i class="fab fa-facebook-f white-text"> </i>
+
+            </a>
+
+            <!-- Twitter -->
+            <a class="tw-ic px-2">
+
+              <i class="fab fa-twitter white-text"> </i>
+
+            </a>
+
+            <!-- Google + -->
+            <a class="gplus-ic px-2">
+
+              <i class="fab fa-google-plus-g white-text"> </i>
+
+            </a>
+
+            <!-- Linkedin -->
+            <a class="li-ic px-2">
+
+              <i class="fab fa-linkedin-in white-text"> </i>
+
+            </a>
+
+            <!-- Instagram -->
+            <a class="ins-ic px-2">
+
+              <i class="fab fa-instagram white-text"> </i>
+
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container mt-5 mb-4 text-center text-md-left">
+
+      <div class="row mt-3">
+
+        <!-- First column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+          <h6 class="text-uppercase font-weight-bold">
+
+            <strong>Company name</strong>
+
+          </h6>
+
+          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
+
+            consectetur
+
+            adipisicing elit.</p>
+
+        </div>
+        <!-- First column -->
+
+        <!-- Second column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <h6 class="text-uppercase font-weight-bold">
+
+            <strong>Products</strong>
+
+          </h6>
+
+          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+          <p>
+
+            <a href="#!">MDBootstrap</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">MDWordPress</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">BrandFlow</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">Bootstrap Angular</a>
+
+          </p>
+
+        </div>
+        <!-- Second column -->
+
+        <!-- Third column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <h6 class="text-uppercase font-weight-bold">
+
+            <strong>Useful links</strong>
+
+          </h6>
+
+          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+          <p>
+
+            <a href="#!">Your Account</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">Become an Affiliate</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">Shipping Rates</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">Help</a>
+
+          </p>
+
+        </div>
+        <!-- Third column -->
+
+        <!-- Fourth column -->
+        <div class="col-md-4 col-lg-3 col-xl-3">
+
+          <h6 class="text-uppercase font-weight-bold">
+
+            <strong>Contact</strong>
+
+          </h6>
+
+          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+          <p>
+
+            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+
+          <p>
+
+            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+
+          <p>
+
+            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+
+          <p>
+
+            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+        </div>
+        <!-- Fourth column -->
+
+      </div>
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright py-3 text-center">
+
+      <div class="container-fluid">
+
+        © 2019 Copyright: <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+
+      </div>
+
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static 'user/js/jquery-3.4.1.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'user/js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'user/js/bootstrap.min.js' %}">
+  </script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'user/js/mdb.min.js' %}"></script>
+
+  <script type="text/javascript" src="{% static 'user/js/user.js' %}"></script>
+  <script type="text/javascript">
+      // SideNav Initialization
+      $(".button-collapse").sideNav();
+      $.ajaxSetup({
+      beforeSend: function(xhr, settings) {
+        function getCookie(name) {
+          var cookieValue = null;
+          if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+              var cookie = jQuery.trim(cookies[i]);
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+              }
+            }
+          }
+          return cookieValue;
+        }
+        if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+          // Only send the token to relative URLs i.e. locally.
+          xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+      }
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
