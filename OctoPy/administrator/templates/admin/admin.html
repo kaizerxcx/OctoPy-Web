@@ -24,7 +24,6 @@
 </head>
 
 <body class="homepage-v1 hidden-sn white-skin animated"style="background-color: white;">
-	
 
   <!-- Navigation -->
   <header>
@@ -35,11 +34,11 @@
       <!-- Logo -->
       <li>
 
-        <div class="logo-wrapper waves-light" style="height: 120px;">
+        <div class="logo-wrapper waves-light">
 
           <a href="#">
 
-			  <img src="{% static 'admin/assets/img/Components/Adminn.png' %}" class="img-fluid flex-center">
+            <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
 
           </a>
 
@@ -324,56 +323,29 @@
               </a>
               <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>&nbsp Kenneth sent you a request</span>
+                  <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                  <span>New order received</span>
                   <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 13 min</span>
                 </a>
                 <a class="dropdown-item" href="#">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>&nbsp Kaizer Tabañag sent you a request</span>
+                  <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                  <span>New order received</span>
                   <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 33 min</span>
                 </a>
                 <a class="dropdown-item" href="#">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>&nbsp Erwin Villarojo sent you a request</span>
+                  <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>
+                  <span>Your campaign is about to end</span>
                   <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 53 min</span>
                 </a>
               </div>
             </li>
-              
-<!--
+            <li class="nav-item">
+              <a class="nav-link waves-effect"><i class="fas fa-envelope blue-text"></i> <span
+                  class="clearfix d-none d-sm-inline-block font-weight-bold">Contact</span></a>
+            </li>
             <li class="nav-item">
               <a class="nav-link waves-effect"><i class="fas fa-comments blue-text"></i> <span
                   class="clearfix d-none d-sm-inline-block font-weight-bold">Support</span></a>
-            </li>
--->
-              <li class="nav-item dropdown notifications-nav">
-              <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span class="badge red">3</span> <i class="fas fa-comments blue-text"></i>
-                <span class="d-none d-md-inline-block font-weight-bold">Feedbacks</span>
-              </a>
-              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">
-                  <i class="fa fa-comments" aria-hidden="true"></i>
-                  <span>&nbsp Julieta Palma has given a feedback</span>
-                  <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 13 min</span>
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fa fa-comments" aria-hidden="true"></i>
-                  <span>&nbsp Kaizer Tabañag has given a feedback</span>
-                  <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 33 min</span>
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fa fa-comments" aria-hidden="true"></i>
-                  <span>&nbsp Erwin Villarojo has given a feedback</span>
-                  <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 53 min</span>
-                </a>
-              </div>
-            </li>
-              <li class="nav-item">
-              <a class="nav-link waves-effect"><i class="fas fa-envelope blue-text"></i> <span
-                  class="clearfix d-none d-sm-inline-block font-weight-bold">Contact</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle waves-effect" href="#" id="adminDropdown" data-toggle="dropdown"
@@ -407,10 +379,143 @@
 
  </section>
   <!-- Intro -->
+
   <!-- Main Container -->
   <div class="container" >
     <main>
       <div class="container-fluid">
+  
+        <!-- Section: Intro -->
+        <section class="mt-md-4 pt-md-2 mb-5 pb-4">
+  
+          <!-- Grid row -->
+          <div class="row">
+  
+            <!-- Grid column -->
+            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+  
+              <!-- Card -->
+              <div class="card card-cascade cascading-admin-card">
+  
+                <!-- Card Data -->
+                <div class="admin-up">
+                  <i class="far fa-money-bill-alt primary-color mr-3 z-depth-2"></i>
+                  <div class="data">
+                    <p class="text-uppercase">sales</p>
+                    <h4 class="font-weight-bold dark-grey-text">2000$</h4>
+                  </div>
+                </div>
+  
+                <!-- Card content -->
+                <div class="card-body card-body-cascade">
+                  <div class="progress mb-3">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="card-text">Better than last week (25%)</p>
+                </div>
+  
+              </div>
+              <!-- Card -->
+  
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+  
+              <!-- Card -->
+              <div class="card card-cascade cascading-admin-card">
+  
+                <!-- Card Data -->
+                <div class="admin-up">
+                  <i class="fas fa-chart-line warning-color mr-3 z-depth-2"></i>
+                  <div class="data">
+                    <p class="text-uppercase">subscriptions</p>
+                    <h4 class="font-weight-bold dark-grey-text">200</h4>
+                  </div>
+                </div>
+  
+                <!-- Card content -->
+                <div class="card-body card-body-cascade">
+                  <div class="progress mb-3">
+                    <div class="progress-bar red accent-2" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="card-text">Worse than last week (25%)</p>
+                </div>
+  
+              </div>
+              <!-- Card -->
+  
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
+  
+              <!-- Card -->
+              <div class="card card-cascade cascading-admin-card">
+  
+                <!-- Card Data -->
+                <div class="admin-up">
+                  <i class="fas fa-chart-pie light-blue lighten-1 mr-3 z-depth-2"></i>
+                  <div class="data">
+                    <p class="text-uppercase">traffic</p>
+                    <h4 class="font-weight-bold dark-grey-text">20000</h4>
+                  </div>
+                </div>
+  
+                <!-- Card content -->
+                <div class="card-body card-body-cascade">
+                  <div class="progress mb-3">
+                    <div class="progress-bar red accent-2" role="progressbar" style="width: 75%" aria-valuenow="75"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="card-text">Worse than last week (75%)</p>
+                </div>
+  
+              </div>
+              <!-- Card -->
+  
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-xl-3 col-md-6 mb-0">
+  
+              <!-- Card -->
+              <div class="card card-cascade cascading-admin-card">
+  
+                <!-- Card Data -->
+                <div class="admin-up">
+                  <i class="fas fa-chart-bar red accent-2 mr-3 z-depth-2"></i>
+                  <div class="data">
+                    <p class="text-uppercase">organic traffic</p>
+                    <h4 class="font-weight-bold dark-grey-text">2000</h4>
+                  </div>
+                </div>
+  
+                <!-- Card content -->
+                <div class="card-body card-body-cascade">
+                  <div class="progress mb-3">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="card-text">Better than last week (25%)</p>
+                </div>
+  
+              </div>
+              <!-- Card -->
+  
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+        </section>
+        <!-- Section: Intro -->
   
         <!-- Section: Main panel -->
         <section class="mb-5">
@@ -420,7 +525,6 @@
   
             <!-- Section: Chart -->
             <section>
-			  <br>
   
               <!-- Grid row -->
               <div class="row">
@@ -430,7 +534,7 @@
   
                   <!-- Card image -->
                   <div class="view view-cascade gradient-card-header light-blue lighten-1">
-                    <h2 class="h2-responsive mb-0 font-weight-500">Users Peak Time</h2>
+                    <h2 class="h2-responsive mb-0 font-weight-500">Sales</h2>
                   </div>
   
                   <!-- Card content -->
@@ -442,7 +546,20 @@
                       <!-- First column -->
                       <div class="col-md-6">
   
+                        <!-- Date select -->
+                        <p class="lead"><span class="badge info-color p-2">Data range</span></p>
+                        <select class="mdb-select colorful-select dropdown-info md-form">
+                          <option value="" disabled selected>Choose time period</option>
+                          <option value="1">Today</option>
+                          <option value="2">Yesterday</option>
+                          <option value="3">Last 7 days</option>
+                          <option value="3">Last 30 days</option>
+                          <option value="3">Last week</option>
+                          <option value="3">Last month</option>
+                        </select>
+  
                         <!-- Date pickers -->
+                        <p class="lead pt-3 pb-4"><span class="badge info-color p-2">Custom date</span></p>
                         <div class="md-form">
                           <input placeholder="Selected date" type="text" id="from" class="form-control datepicker">
                           <label for="date-picker-example">From</label>
@@ -457,6 +574,17 @@
   
                       <!-- Second column -->
                       <div class="col-md-6 text-center pl-xl-2 my-md-0 my-3">
+  
+                        <!-- Summary -->
+                        <p>Total sales: <strong>2000$</strong>
+                          <button type="button" class="btn btn-info btn-sm p-2" data-toggle="tooltip" data-placement="top"
+                            title="Total sales in the given period"><i class="fas fa-question"></i></button>
+                        </p>
+                        <p>Average sales: <strong>100$</strong>
+                          <button type="button" class="btn btn-info btn-sm p-2 mr-0" data-toggle="tooltip"
+                            data-placement="top" title="Average daily sales in the given period"><i
+                              class="fas fa-question"></i></button>
+                        </p>
   
                         <!-- Change chart -->
                         <span class="min-chart my-4" id="chart-sales" data-percent="76"><span
@@ -499,10 +627,7 @@
   
             </section>
             <!-- Section: Chart -->
-			  
-  			<br>
-			<br>
-			  
+  
             <!-- Section: Table -->
             <section>
   
@@ -589,7 +714,7 @@
                         class="fas fa-columns mt-0"></i></button>
                   </div>
   
-                  <a href="" class="white-text mx-3">Score Leaderboards</a>
+                  <a href="" class="white-text mx-3">Table name</a>
   
                   <div>
                     <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
@@ -616,10 +741,12 @@
                             <input class="form-check-input" type="checkbox" id="checkbox">
                             <label for="checkbox" class="form-check-label mr-2 label-table"></label>
                           </th>
-                          <th class="th-lg"><a>Rank<i class="fas fa-sort ml-1"></i></a></th>
-                          <th class="th-lg"><a>Score<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>First Name <i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Last Name<i class="fas fa-sort ml-1"></i></a></th>
                           <th class="th-lg"><a>Username<i class="fas fa-sort ml-1"></i></a></th>
                           <th class="th-lg"><a>Email<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Country<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>City<i class="fas fa-sort ml-1"></i></a></th>
                         </tr>
                       </thead>
                       <!-- Table head -->
@@ -631,50 +758,60 @@
                             <input class="form-check-input" type="checkbox" id="checkbox1">
                             <label for="checkbox1" class="label-table"></label>
                           </th>
-                          <td>1</td>
-                          <td>98</td>
+                          <td>Mark</td>
+                          <td>Otto</td>
                           <td>@mdo</td>
                           <td>markotto@gmail.com</td>
+                          <td>USA</td>
+                          <td>San Francisco</td>
                         </tr>
                         <tr>
                           <th scope="row">
                             <input class="form-check-input" type="checkbox" id="checkbox2">
                             <label for="checkbox2" class="label-table"></label>
                           </th>
-                          <td>2</td>
-                          <td>90</td>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
                           <td>@fat</td>
                           <td>jacobt@gmail.com</td>
+                          <td>France</td>
+                          <td>Paris</td>
                         </tr>
                         <tr>
                           <th scope="row">
                             <input class="form-check-input" type="checkbox" id="checkbox3">
                             <label for="checkbox3" class="label-table"></label>
                           </th>
-                          <td>3</td>
-                          <td>85</td>
+                          <td>Larry</td>
+                          <td>the Bird</td>
                           <td>@twitter</td>
                           <td>larrybird@gmail.com</td>
+                          <td>Germany</td>
+                          <td>Berlin</td>
                         </tr>
                         <tr>
                           <th scope="row">
                             <input class="form-check-input" type="checkbox" id="checkbox4">
                             <label for="checkbox4" class="label-table"></label>
                           </th>
-                          <td>4</td>
-                          <td>80</td>
+                          <td>Paul</td>
+                          <td>Topolski</td>
                           <td>@P_Topolski</td>
                           <td>ptopolski@gmail.com</td>
+                          <td>Poland</td>
+                          <td>Warsaw</td>
                         </tr>
                         <tr>
                           <th scope="row">
                             <input class="form-check-input" type="checkbox" id="checkbox5">
                             <label for="checkbox5" class="label-table"></label>
                           </th>
-                          <td>5</td>
-                          <td>76</td>
+                          <td>Anna</td>
+                          <td>Doe</td>
                           <td>@andy</td>
                           <td>annadoe@gmail.com</td>
+                          <td>Spain</td>
+                          <td>Madrid</td>
                         </tr>
                       </tbody>
                       <!-- Table body -->
@@ -750,7 +887,250 @@
   
         </section>
         <!-- Section: Main panel -->
- 
+  
+        <!-- Section: Cascading panels -->
+        <section class="mb-5">
+  
+          <!-- Grid row -->
+          <div class="row">
+  
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+  
+              <!-- Panel -->
+              <div class="card">
+  
+                <div class="card-header white-text primary-color">
+                  Things to improve
+                </div>
+  
+                <div class="card-body text-center px-4 mb-3">
+                  <div class="list-group list-panel">
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i>
+                    </a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i>
+                    </a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i>
+                    </a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i>
+                    </a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+              <!-- Panel -->
+  
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+  
+              <!-- Panel -->
+              <div class="card">
+  
+                <div class="card-header white-text primary-color">
+                  Tasks to do
+                </div>
+  
+                <div class="card-body text-center px-4 mb-3">
+                  <div class="list-group list-panel">
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                  </div>
+                </div>
+  
+              </div>
+              <!-- Panel -->
+  
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-6 mb-0">
+  
+              <!-- Panel -->
+              <div class="card">
+  
+                <div class="card-header white-text primary-color">
+                  Statistics
+                </div>
+  
+                <div class="card-body text-center px-4 mb-3">
+                  <div class="list-group list-panel">
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
+                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                        title="Click to fix"></i></a>
+                  </div>
+                </div>
+  
+              </div>
+              <!-- Panel -->
+  
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+        </section>
+        <!--Section: Cascading panels-->
+  
+        <!-- Section: Classic admin cards -->
+        <section class="pb-3">
+  
+          <!-- Grid row -->
+          <div class="row">
+  
+            <!-- Grid column -->
+            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+  
+              <!-- Card Primary -->
+              <div class="card classic-admin-card primary-color">
+                <div class="card-body">
+                  <div class="pull-right">
+                    <i class="far fa-money-bill-alt"></i>
+                  </div>
+                  <p class="white-text">SALES</p>
+                  <h4 class="check">2000$</h4>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg grey darken-3" role="progressbar" style="width: 25%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body">
+                  <p>Better than last week (25%)</p>
+                </div>
+              </div>
+              <!-- Card Primary -->
+  
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+  
+              <!-- Card Yellow -->
+              <div class="card classic-admin-card warning-color">
+                <div class="card-body">
+                  <div class="pull-right">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <p>SUBSCRIPTIONS</p>
+                  <h4 class="check">200</h4>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg grey darken-3" role="progressbar" style="width: 25%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body">
+                  <p>Worse than last week (25%)</p>
+                </div>
+              </div>
+              <!-- Card Yellow -->
+  
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
+  
+              <!-- Card Blue -->
+              <div class="card classic-admin-card light-blue lighten-1">
+                <div class="card-body">
+                  <div class="pull-right">
+                    <i class="fas fa-chart-pie"></i>
+                  </div>
+                  <p>TRAFFIC</p>
+                  <h4 class="check">20000</h4>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg grey darken-4" role="progressbar" style="width: 75%" aria-valuenow="75"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body">
+                  <p>Better than last week (75%)</p>
+                </div>
+              </div>
+              <!-- Card Blue -->
+  
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-xl-3 col-md-6 mb-0">
+  
+              <!-- Card Red -->
+              <div class="card classic-admin-card red accent-2">
+                <div class="card-body">
+                  <div class="pull-right">
+                    <i class="fas fa-chart-bar"></i>
+                  </div>
+                  <p>ORGANIC TRAFFIC</p>
+                  <h4 class="check">2000</h4>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg grey darken-4" role="progressbar" style="width: 25%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body">
+                  <p>Better than last week (25%)</p>
+                </div>
+              </div>
+              <!-- Card Red -->
+  
+            </div>
+            <!-- Grid column -->
+  
+          </div>
+          <!-- Grid row -->
+  
+        </section>
+        <!-- Section: Classic admin cards -->
+  
+      </div>
+    </main>
+
+  </div>
+  <!-- Main Container -->
+
   <!-- Footer -->
   <footer class="page-footer text-center text-md-left stylish-color-dark pt-0">
 
@@ -833,10 +1213,52 @@
 
           <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
 
-          <p>Octopy</p>
+          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
+
+            consectetur
+
+            adipisicing elit.</p>
 
         </div>
         <!-- First column -->
+
+        <!-- Second column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <h6 class="text-uppercase font-weight-bold">
+
+            <strong>Products</strong>
+
+          </h6>
+
+          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+          <p>
+
+            <a href="#!">MDBootstrap</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">MDWordPress</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">BrandFlow</a>
+
+          </p>
+
+          <p>
+
+            <a href="#!">Bootstrap Angular</a>
+
+          </p>
+
+        </div>
+        <!-- Second column -->
 
         <!-- Third column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -851,65 +1273,61 @@
 
           <p>
 
-            <a href="#!">Home</a>
+            <a href="#!">Your Account</a>
 
           </p>
 
           <p>
 
-            <a href="#!">About us</a>
+            <a href="#!">Become an Affiliate</a>
 
           </p>
 
           <p>
 
-            <a href="#!">Services</a>
+            <a href="#!">Shipping Rates</a>
 
           </p>
 
           <p>
 
-            <a href="#!"> Terms of Service
-
-          </p>
-
-          <p> <a href="#!"> Privacy Policy
+            <a href="#!">Help</a>
 
           </p>
 
         </div>
         <!-- Third column -->
 
-        <!-- Fourth column -->	  
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Fourth column -->
+        <div class="col-md-4 col-lg-3 col-xl-3">
 
           <h6 class="text-uppercase font-weight-bold">
-            <strong>Useful links</strong>
+
+            <strong>Contact</strong>
+
           </h6>
 
-          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 100px;">
+          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
 
           <p>
-            <a href="#!"><i class="fas fa-home mr-3"></i><br>N. Bacalso Ave., Cebu City</a>
-          </p>
+
+            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
 
           <p>
-            <a href="#!"><i class="fas fa-envelope mr-3"></i>octopy.startup@gmail.com</a>
-          </p>
+
+            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
 
           <p>
-            <a href="#!"><i class="fas fa-phone mr-3"></i> +639564374542</a>
-          </p>
+
+            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
 
           <p>
-          </p>
 
-          <p>
-          </p>
+            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
 
         </div>
         <!-- Fourth column -->
-		  
+
       </div>
 
     </div>
@@ -920,7 +1338,7 @@
 
       <div class="container-fluid">
 
-        © 2019 Copyright: <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Octopy. All Rights Reserved<br>Designed by Team Startup</a>
+        © 2019 Copyright: <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
 
       </div>
 
@@ -959,9 +1377,9 @@ var ctxL = document.getElementById("lineChart").getContext('2d');
 var myLineChart = new Chart(ctxL, {
   type: 'line',
   data: {
-    labels: ["1:00 P.M.", "2:00 P.M.", "3:00 P.M.", "4:00 P.M.", "5:00 P.M.", "6:00 P.M.", "7:00 P.M."],
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [{
-      label: "Users Peak Time",
+      label: "My First dataset",
       fillColor: "#fff",
       backgroundColor: 'rgba(255, 255, 255, .3)',
       borderColor: 'rgba(255, 255, 255)',
