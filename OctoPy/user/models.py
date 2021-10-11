@@ -63,7 +63,6 @@ class Notification(models.Model):
 	sender = models.ForeignKey(Child, null = False, blank = False, on_delete = models.CASCADE, related_name = "notification_sender")
 	receiver = models.CharField(max_length=500)
 	content = models.CharField(max_length=500)
-	subject = models.CharField(max_length=100)
 	datetime = models.DateTimeField(auto_now=True)
 	isRead = models.BooleanField(default=False)
 	class Meta:

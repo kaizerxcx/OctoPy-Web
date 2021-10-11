@@ -46,7 +46,7 @@ class UserWelcomeView(View):
                 if password == user.password:
                     response_data['status'] = 0
                     user_id = user.user_id
-            if Administrator.objects.filter(user_ptr_id=user_id).exists():
+            if Administrator.objects.filter(child_id_id = user_id).exists():
                 response_data['status'] = 1
             now = datetime.now()
             Child.objects.filter(user_ptr_id=user_id).update(lastLogin= now.strftime('%I:%M %p'))
@@ -66,6 +66,7 @@ class UserView(View):
         if access_type == 0:
             users = User.objects.raw("SELECT * FROM user JOIN child ON user.user_id = %s", [user_id])
             requests = Request.objects.raw("SELECT * FROM request WHERE child_id_id = %s", [user_id])
+            notifications = Notification.objects.raw("SELECT * FROM notification WHERE receiver = %s", [user_id])
             isRequested = True
             if not requests:
                 isRequested = False
@@ -74,6 +75,7 @@ class UserView(View):
                 'users': users,
                 'requests': requests,
                 'isRequested': isRequested,
+                'notifications': notifications,
             }
             return render(request, 'user/user.html', context)
         else:
@@ -96,5 +98,10 @@ class UserView(View):
             Notification.objects.create(sender_id = user_id, content = notif_content, receiver = admin_receive)
             response_data['status'] = 1
             return JsonResponse(response_data) 
+        elif request.POST.get('action') == 'notificationRead':
+            notification_id = request.POST.get("notification_id")
+            Notification.objects.filter(notification_id = notification_id).delete()
+            response_data['status'] = 1
+            return JsonResponse(response_data)
         else:
             return HttpResponse('<br><h1 style="text-align:center;">Error Request</h1>')
