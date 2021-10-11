@@ -29,7 +29,8 @@ class UserWelcomeView(View):
             response_data['age'] = age
             response_data['username'] = username
             response_data['password'] = password
-            user = User.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, password = password )
+            now = datetime.now()
+            user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, password = password, lastLogin= now.strftime('%I:%M %p'))
             # user.save()
             return JsonResponse(response_data)
         elif request.POST.get('action') == 'loginUser':
@@ -47,13 +48,14 @@ class UserWelcomeView(View):
                     user_id = user.user_id
             if Administrator.objects.filter(user_ptr_id=user_id).exists():
                 response_data['status'] = 1
+            now = datetime.now()
+            Child.objects.filter(user_ptr_id=user_id).update(lastLogin= now.strftime('%I:%M %p'))
             request.session['user_id'] = user_id
             request.session['access_type'] = response_data['status'] 
             return JsonResponse(response_data)       
         else:
             return render(request, 'user/index.html')
 class UserView(View):
-    
     def get(self, request):
         user_id = -1
         access_type = -1
@@ -62,7 +64,18 @@ class UserView(View):
         if 'access_type' in request.session:
             access_type = request.session['access_type']
         if access_type == 0:
-            return render(request, 'user/user.html')
+            users = User.objects.raw("SELECT * FROM user JOIN child ON user.user_id = %s", [user_id])
+            requests = Request.objects.raw("SELECT * FROM request WHERE child_id_id = %s", [user_id])
+            isRequested = True
+            if not requests:
+                isRequested = False
+            context={
+                'user_id': user_id,
+                'users': users,
+                'requests': requests,
+                'isRequested': isRequested,
+            }
+            return render(request, 'user/user.html', context)
         else:
             return HttpResponse('<br><h1 style="text-align:center;">Invalid Access Code</h1>')
     def post(self, request):
@@ -70,6 +83,17 @@ class UserView(View):
         if request.POST.get('action') == 'logout':
             del request.session['user_id']
             del request.session['access_type']
+            response_data['status'] = 1
+            return JsonResponse(response_data) 
+        elif request.POST.get('action') == 'requestAdmin':
+            user_id = request.POST.get("user_id")
+            users = Child.objects.filter(user_ptr_id = user_id)
+            content = "Request for Administrator Account"
+            for user in users:
+                notif_content = user.firstname+" sent you a request"
+            Request.objects.create(child_id_id = user_id, content = content)
+            admin_receive = -1
+            Notification.objects.create(sender_id = user_id, content = notif_content, receiver = admin_receive)
             response_data['status'] = 1
             return JsonResponse(response_data) 
         else:

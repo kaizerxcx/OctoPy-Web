@@ -1,6 +1,7 @@
 from django import db
 from django.db import models
 from django.utils import timezone
+from datetime import datetime
 
 # Create your models here.
 
@@ -22,11 +23,11 @@ class Child(User):
     isAtLevel3 = models.BooleanField(default=False)
     isAtLevel4 = models.BooleanField(default=False)
     isAtLevel5 = models.BooleanField(default=False)
-    lastLogin = models.DateField(auto_now=True)
+    lastLogin =  models.CharField(max_length=10)
     class Meta:
         db_table="Child"
 
-class Points:
+class Points(models.Model):
     point_id = models.AutoField(primary_key=True)
     child_id =  models.ForeignKey(Child, null = False, blank = False, on_delete = models.CASCADE, related_name = "user_points")
     dateAcquired = models.DateField(auto_now=True)
@@ -38,3 +39,32 @@ class Points:
     class Meta:
         db_table = "Points"
 
+class Feedback(models.Model):
+    feedback_id = models.AutoField(primary_key=True)
+    child_id =  models.ForeignKey(Child, null = False, blank = False, on_delete = models.CASCADE, related_name = "user_feedback")
+    feedback = models.CharField(max_length=1000)
+    date = models.DateField(auto_now=True)
+    isRead = models.BooleanField(default=False)
+    class Meta:
+        db_table = "Feedback"
+
+class Request(models.Model):
+    request_id = models.AutoField(primary_key=True)
+    child_id =  models.ForeignKey(Child, null = False, blank = False, on_delete = models.CASCADE, related_name = "user_request")
+    status = models.CharField(max_length=100, default="Pending")
+    date = models.DateField(auto_now=True)
+    content = models.CharField(max_length=100)
+    isRead = models.BooleanField(default=False)
+    class Meta:
+        db_table = "Request"
+
+class Notification(models.Model):
+	notification_id = models.AutoField(primary_key=True)
+	sender = models.ForeignKey(Child, null = False, blank = False, on_delete = models.CASCADE, related_name = "notification_sender")
+	receiver = models.CharField(max_length=500)
+	content = models.CharField(max_length=500)
+	subject = models.CharField(max_length=100)
+	datetime = models.DateTimeField(auto_now=True)
+	isRead = models.BooleanField(default=False)
+	class Meta:
+		db_table="Notification"

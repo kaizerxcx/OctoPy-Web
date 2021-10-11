@@ -382,21 +382,64 @@
 
   <!-- Main Container -->
   <div class="container" >
+    {% for user in users %}
+    <input type="text" id="user_id" value="{{user.user_id}}" hidden> 
+    {% endfor %}
+    <input type="text" value="{{isRequested}}" id="isRequested" hidden> 
     <main>
-      <div class="row">
+      <div class="row" id="noRequest">
         <div class="col-md-12 center-block mb-5 col-sm-4">
           <center>
             <!-- <div class="spinner-border blue-text" role="status" ></div> -->
             <div class="row justify-content-center">
-              <img src="{% static 'user/img/user.png' %}" style="height: 600px; width: 5000px;">
+              <img src="{% static 'user/img/user.png' %}" style="height: 600px; width: 5000px;" >
             </div>
             <div class="row justify-content-center">
-              <button type="button" class="btn btn-info btn-rounded">Request for Upgrade</button>
+                <button type="button" id="requestButton" class="btn btn-info btn-rounded">Request for Upgrade</button>
             </div>
           </center>
       </div>
     </main>
    
+    <section id="tableRequest">
+
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Table -->
+          <table class="table" style="text-align: center;">
+
+            <!-- Table head -->
+            <thead>
+              <tr>
+                <th>Request #</th>
+                <th>Date Requested</th>
+                <th>Type</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <!-- Table head -->
+
+            <!-- Table body -->
+            <tbody>
+            {% for request in requests %}
+              <tr>
+                <th scope="row">{{request.request_id}}</th>
+                <td>{{request.date}}</td>
+                <td>{{request.content}}</td>
+                <td>{{request.status}}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+            <!-- Table body -->
+          </table>
+          <!-- Table -->
+
+        </div>
+      </div>
+
+    </section>
+    <!-- Section: Basic examples -->
   </div>
   <!-- Main Container -->
 
@@ -412,9 +455,7 @@
 
           <!-- Grid column -->
           <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-
-            <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
-
+            <h6 class="mb-0 white-text">Get connected with us on social networks! </h6>
           </div>
           <!-- Grid column -->
 
