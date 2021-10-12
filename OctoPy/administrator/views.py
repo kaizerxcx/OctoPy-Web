@@ -7,7 +7,12 @@ from django.http import HttpResponse
 from .models import *
 from user.models import *
 from administrator.models import Administrator
+import pandas as pd
+import numpy as np
 import hashlib
+from datetime import datetime
+from dateutil import parser
+
 # Create your views here.
 
 class AdministratorView(View):
@@ -22,11 +27,22 @@ class AdministratorView(View):
             users = User.objects.raw("SELECT * FROM user JOIN child ON user.user_id = %s", [user_id])
             notifications = Notification.objects.raw("SELECT * FROM notification WHERE receiver = -1 AND isRead = 0 AND sender_id != %s", [user_id])
             requests = Request.objects.raw("SELECT * FROM request JOIN user ON request.child_id_id = user.user_id AND request.status != 'Approved' AND request.status != 'Rejected' ")
+            item = Login.objects.all().values()
+            df = pd.DataFrame(item)
+            peak = df['lastLogin'].value_counts()
+            dates = df['datetime'].values
+            DATE = [ parser.parse(str(x)) for x in dates]
+            months = [x.strftime("%B") for x in DATE]
+            df['months'] = months
+            months = df['months'].value_counts()
             context = {
                 'user_id': user_id,
                 'users' : users,
                 'notifications': notifications,
                 'requests': requests,
+                'labels': df['lastLogin'].values,
+                'peak': peak.to_json(),
+                'months': months.to_json(),
             }
             return render(request,"admin/admin.html", context)
         else:

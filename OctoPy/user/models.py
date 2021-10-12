@@ -23,7 +23,6 @@ class Child(User):
     isAtLevel3 = models.BooleanField(default=False)
     isAtLevel4 = models.BooleanField(default=False)
     isAtLevel5 = models.BooleanField(default=False)
-    lastLogin =  models.CharField(max_length=10)
     class Meta:
         db_table="Child"
 
@@ -67,3 +66,11 @@ class Notification(models.Model):
 	isRead = models.BooleanField(default=False)
 	class Meta:
 		db_table="Notification"
+
+class Login(models.Model):
+    login_id = models.AutoField(primary_key=True)
+    child_id =  models.ForeignKey(Child, null = False, blank = False, on_delete = models.CASCADE, related_name = "user_login")
+    datetime = models.DateTimeField(auto_now=True)
+    lastLogin =  models.CharField(max_length=10)
+    class Meta:
+        db_table="Login"

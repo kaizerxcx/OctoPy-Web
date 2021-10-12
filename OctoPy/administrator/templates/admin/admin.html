@@ -550,95 +550,31 @@
             <section>
   
               <!-- Grid row -->
-              <div class="row">
+              <div class="row justify-content-md-center" >
+  
+            
   
                 <!-- Grid column -->
-                <div class="col-xl-5 col-lg-12 mr-0 pb-2">
-  
-                  <!-- Card image -->
-                  <div class="view view-cascade gradient-card-header light-blue lighten-1">
-                    <h2 class="h2-responsive mb-0 font-weight-500">Sales</h2>
-                  </div>
-  
-                  <!-- Card content -->
-                  <div class="card-body card-body-cascade pb-0">
-  
-                    <!-- Panel data -->
-                    <div class="row py-3 pl-4">
-  
-                      <!-- First column -->
-                      <div class="col-md-6">
-  
-                        <!-- Date select -->
-                        <p class="lead"><span class="badge info-color p-2">Data range</span></p>
-                        <select class="mdb-select colorful-select dropdown-info md-form">
-                          <option value="" disabled selected>Choose time period</option>
-                          <option value="1">Today</option>
-                          <option value="2">Yesterday</option>
-                          <option value="3">Last 7 days</option>
-                          <option value="3">Last 30 days</option>
-                          <option value="3">Last week</option>
-                          <option value="3">Last month</option>
-                        </select>
-  
-                        <!-- Date pickers -->
-                        <p class="lead pt-3 pb-4"><span class="badge info-color p-2">Custom date</span></p>
-                        <div class="md-form">
-                          <input placeholder="Selected date" type="text" id="from" class="form-control datepicker">
-                          <label for="date-picker-example">From</label>
-                        </div>
-                        <div class="md-form">
-                          <input placeholder="Selected date" type="text" id="to" class="form-control datepicker">
-                          <label for="date-picker-example">To</label>
-                        </div>
-  
-                      </div>
-                      <!-- First column -->
-  
-                      <!-- Second column -->
-                      <div class="col-md-6 text-center pl-xl-2 my-md-0 my-3">
-  
-                        <!-- Summary -->
-                        <p>Total sales: <strong>2000$</strong>
-                          <button type="button" class="btn btn-info btn-sm p-2" data-toggle="tooltip" data-placement="top"
-                            title="Total sales in the given period"><i class="fas fa-question"></i></button>
-                        </p>
-                        <p>Average sales: <strong>100$</strong>
-                          <button type="button" class="btn btn-info btn-sm p-2 mr-0" data-toggle="tooltip"
-                            data-placement="top" title="Average daily sales in the given period"><i
-                              class="fas fa-question"></i></button>
-                        </p>
-  
-                        <!-- Change chart -->
-                        <span class="min-chart my-4" id="chart-sales" data-percent="76"><span
-                            class="percent"></span></span>
-                        <h5>
-                          <span class="badge red accent-2 p-2">Change <i class="fas fa-arrow-circle-up ml-1"></i></span>
-                          <button type="button" class="btn btn-info btn-sm p-2" data-toggle="tooltip" data-placement="top"
-                            title="Percentage change compared to the same period in the past"><i
-                              class="fas fa-question"></i>
-                          </button>
-                        </h5>
-  
-                      </div>
-                      <!-- Second column -->
-  
-                    </div>
-                    <!-- Panel data -->
-  
-                  </div>
-                  <!-- Card content -->
-  
-                </div>
-                <!-- Grid column -->
-  
-                <!-- Grid column -->
-                <div class="col-xl-7 col-lg-12 mb-4 pb-2">
+                <div class="col-xl-5 col-lg-12 mb-4 pb-2">
   
                   <!-- Chart -->
                   <div class="view view-cascade gradient-card-header blue-gradient">
   
                     <canvas id="lineChart" height="175"></canvas>
+  
+                  </div>
+  
+                </div>
+                <!-- Grid column -->
+
+                  
+                <!-- Grid column -->
+                <div class="col-xl-5 col-lg-12 mb-4 pb-2">
+  
+                  <!-- Chart -->
+                  <div class="view view-cascade gradient-card-header blue-gradient">
+  
+                    <canvas id="barChart" height="175"></canvas>
   
                   </div>
   
@@ -1246,18 +1182,26 @@ $(function () {
   });
 });
 
+var data = "{{peak}}"
+var jsonfile = JSON.parse(data.replace(/&quot;/g,'"'));;
+console.log(Object.keys(jsonfile));
+
+var data2 = "{{months}}"
+var jsonfile2 = JSON.parse(data2.replace(/&quot;/g,'"'));;
+console.log(jsonfile2);
+
 // Main chart
 var ctxL = document.getElementById("lineChart").getContext('2d');
 var myLineChart = new Chart(ctxL, {
   type: 'line',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: Object.keys(jsonfile),
     datasets: [{
-      label: "My First dataset",
+      label: "Users Peak Time",
       fillColor: "#fff",
       backgroundColor: 'rgba(255, 255, 255, .3)',
       borderColor: 'rgba(255, 255, 255)',
-      data: [0, 10, 5, 2, 20, 30, 45],
+      data: Object.values(jsonfile),
     }]
   },
   options: {
@@ -1289,6 +1233,51 @@ var myLineChart = new Chart(ctxL, {
     }
   }
 });
+
+
+var ctxL2 = document.getElementById("barChart").getContext('2d');
+var mybarChart2 = new Chart(ctxL2, {
+  type: 'bar',
+  data: {
+    labels: Object.keys(jsonfile2),
+    datasets: [{
+      label: "Monthly Usage",
+      fillColor: "#fff",
+      backgroundColor: 'rgba(255, 255, 255, .3)',
+      borderColor: 'rgba(255, 255, 255)',
+      data: Object.values(jsonfile2),
+    }]
+  },
+  options: {
+    legend: {
+      labels: {
+        fontColor: "#fff",
+      }
+    },
+    scales: {
+      xAxes: [{
+        gridLines: {
+          display: true,
+          color: "rgba(255,255,255,.25)"
+        },
+        ticks: {
+          fontColor: "#fff",
+        },
+      }],
+      yAxes: [{
+        display: true,
+        gridLines: {
+          display: true,
+          color: "rgba(255,255,255,.25)"
+        },
+        ticks: {
+          fontColor: "#fff",
+        },
+      }],
+    }
+  }
+});
+
 
 $.ajaxSetup({
       beforeSend: function(xhr, settings) {

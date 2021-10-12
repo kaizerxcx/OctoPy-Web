@@ -30,7 +30,7 @@ class UserWelcomeView(View):
             response_data['username'] = username
             response_data['password'] = password
             now = datetime.now()
-            user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, password = password, lastLogin= now.strftime('%I:%M %p'))
+            user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, password = password)
             # user.save()
             return JsonResponse(response_data)
         elif request.POST.get('action') == 'loginUser':
@@ -49,7 +49,8 @@ class UserWelcomeView(View):
             if Administrator.objects.filter(child_id_id = user_id).exists():
                 response_data['status'] = 1
             now = datetime.now()
-            Child.objects.filter(user_ptr_id=user_id).update(lastLogin= now.strftime('%I:%M %p'))
+            if User.objects.filter(user_id = user_id).exists():
+                login = Login.objects.create(child_id_id = user_id, lastLogin= now.strftime('%I:%M %p'))
             request.session['user_id'] = user_id
             request.session['access_type'] = response_data['status'] 
             return JsonResponse(response_data)       
