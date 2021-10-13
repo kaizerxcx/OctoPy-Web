@@ -106,3 +106,9 @@ class UserView(View):
             return JsonResponse(response_data)
         else:
             return HttpResponse('<br><h1 style="text-align:center;">Error Request</h1>')
+		
+class YoutubeView(View):
+	def get(self, request):
+		return render(request, 'user/youtube.html')
+	def post(self, request):
+		return render(request, 'user/youtube.html')

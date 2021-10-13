@@ -7,4 +7,5 @@ urlpatterns = [
   path("", views.UserWelcomeView.as_view(), name="user_welcome_view"),
   path("user", views.UserView.as_view(), name="user_view"),
   path("logout", views.UserWelcomeView.as_view(), name="user_welcome_view"),
+  path("youtube", views.YoutubeView.as_view(), name="youtube_view"),
 ]
