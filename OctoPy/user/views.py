@@ -109,6 +109,6 @@ class UserView(View):
 		
 class YoutubeView(View):
 	def get(self, request):
-		return render(request, 'user/youtube.html')
+		return render('user/youtube.html')
 	def post(self, request):
-		return render(request, 'user/youtube.html')
+		return render('user/youtube.html')
