@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from .models import *
 from administrator.models import Administrator
 import hashlib
+from .forms import FeedbackForm
+from .models import *
 # Create your views here.
 
 class UserWelcomeView(View):
@@ -15,6 +17,7 @@ class UserWelcomeView(View):
     def post(self, request):
         response_data = {}
         user_id = -1
+        form = FeedbackForm(request.POST)
         if request.POST.get('action') == 'registerUser':
             firstname = request.POST.get("firstname")
             lastname = request.POST.get("lastname")
@@ -53,7 +56,16 @@ class UserWelcomeView(View):
                 login = Login.objects.create(child_id_id = user_id, lastLogin= now.strftime('%I:%M %p'))
             request.session['user_id'] = user_id
             request.session['access_type'] = response_data['status'] 
-            return JsonResponse(response_data)       
+            return JsonResponse(response_data) 
+        elif form.is_valid():
+            name = request.POST.get("name")
+            email = request.POST.get("email")
+            subject = request.POST.get("subject")
+            feedback = request.POST.get("feedback")
+            
+            form = Feedback.objects.create(name = name, email = email, subject = subject, feedback = feedback)
+            form.save()
+            return redirect('user:user_welcome_view')
         else:
             return render(request, 'user/index.html')
 class UserView(View):

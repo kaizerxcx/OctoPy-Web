@@ -40,12 +40,16 @@ class Points(models.Model):
 
 class Feedback(models.Model):
     feedback_id = models.AutoField(primary_key=True)
-    child_id =  models.ForeignKey(Child, null = False, blank = False, on_delete = models.CASCADE, related_name = "user_feedback")
+#    child_id =  models.ForeignKey(Child, null = False, blank = False, on_delete = models.CASCADE, related_name = "user_feedback")
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length = 254)
+    subject = models.CharField(max_length=100)
     feedback = models.CharField(max_length=1000)
     date = models.DateField(auto_now=True)
     isRead = models.BooleanField(default=False)
     class Meta:
         db_table = "Feedback"
+
 
 class Request(models.Model):
     request_id = models.AutoField(primary_key=True)
