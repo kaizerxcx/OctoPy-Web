@@ -1,1356 +1,1518 @@
-{% load static %}
-<!DOCTYPE html>
+  {% load static %}
+  <!DOCTYPE html>
 
-<html lang="en">
+  <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Home</title>
-    <!-- Favicons -->
-    <link href="{% static 'admin/assets/img/Components/octopy-icon.png' %}" rel="icon">
-    <link href="{% static 'admin/assets/img/Components/octopy-icon.png' %}" rel="apple-touch-icon">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'admin/css/bootstrap.min.css' %}" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="{% static 'admin/css/mdb.min.css' %}" rel="stylesheet">
-  <link href="{% static 'admin/css/addons/datatables.min.css' %}" rel="stylesheet">
-  <link href="{% static 'admin/css/addons/datatables-select.min.css' %}" rel="stylesheet">
-  <script src="{% static 'admin/js/jquery-3.4.1.min.js' %}"></script>
-  <script src="{% static 'admin/js/jquery.timeago.js' %}"></script>
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home</title>
+      <!-- Favicons -->
+      <link href="{% static 'admin/assets/img/Components/octopy-icon.png' %}" rel="icon">
+      <link href="{% static 'admin/assets/img/Components/octopy-icon.png' %}" rel="apple-touch-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'admin/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'admin/css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'admin/css/addons/datatables.min.css' %}" rel="stylesheet">
+    <link href="{% static 'admin/css/addons/datatables-select.min.css' %}" rel="stylesheet">
+    <script src="{% static 'admin/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'admin/js/jquery.timeago.js' %}"></script>
+    <style>
 
-  </style>
+    </style>
 
-</head>
+  </head>
 
-<body class="homepage-v1 hidden-sn white-skin animated"style="background-color: white;">
+  <body class="homepage-v1 hidden-sn white-skin animated"style="background-color: white;">
 
-  <!-- Navigation -->
-  <header>
+    <!-- Navigation -->
+    <header>
 
-    <!-- Sidebar navigation -->
-    <ul id="slide-out" class="side-nav custom-scrollbar">
+      <!-- Sidebar navigation -->
+      <ul id="slide-out" class="side-nav custom-scrollbar">
 
-      <!-- Logo -->
-      <li>
+        <!-- Logo -->
+        <li>
 
-        <div class="logo-wrapper waves-light">
+          <div class="logo-wrapper waves-light">
 
-          <a href="#">
+            <a href="#">
 
-            <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
-
-          </a>
-
-        </div>
-
-      </li>
-      <!-- Logo -->
-
-      <!-- Social -->
-      <li>
-
-        <ul class="social">
-
-          <li>
-
-            <a class="fb-ic">
-
-              <i class="fab fa-facebook-f"> </i>
+              <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
 
             </a>
-
-          </li>
-
-          <li>
-
-            <a class="pin-ic">
-
-              <i class="fab fa-pinterest"> </i>
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a class="gplus-ic">
-
-              <i class="fab fa-google-plus-g"> </i>
-
-            </a>
-
-          </li>
-
-          <li>
-
-            <a class="tw-ic">
-
-              <i class="fab fa-twitter"> </i>
-
-            </a>
-
-          </li>
-
-        </ul>
-
-      </li>
-      <!-- Social -->
-
-      <!-- Search Form -->
-      <li>
-
-        <form class="search-form" role="search">
-
-          <div class="form-group md-form mt-0 pt-1 waves-light">
-
-            <input type="text" class="form-control" placeholder="Search">
 
           </div>
 
-        </form>
+        </li>
+        <!-- Logo -->
 
-      </li>
-      <!-- Search Form -->
+        <!-- Social -->
+        <li>
 
-      <!-- Side navigation links -->
-      <li>
+          <ul class="social">
 
-        <ul class="collapsible collapsible-accordion">
+            <li>
 
-          <li>
+              <a class="fb-ic">
 
-            <a class="collapsible-header waves-effect arrow-r">
+                <i class="fab fa-facebook-f"> </i>
 
-              <i class="fas fa-shopping-cart"></i> Cart page
-
-              <i class="fas fa-angle-down rotate-icon"></i>
-
-            </a>
-
-            <div class="collapsible-body">
-
-              <ul>
-
-                <li>
-
-                  <a href="../cart/cart-v1.html" class="waves-effect">Cart V.1</a>
-
-                </li>
-
-                <li>
-
-                  <a href="../cart/cart-v2.html" class="waves-effect">Cart V.2</a>
-
-                </li>
-
-              </ul>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <a class="collapsible-header waves-effect arrow-r">
-
-              <i class="far fa-hand-pointer"></i> Category page
-
-              <i class="fas fa-angle-down rotate-icon"></i>
-
-            </a>
-
-            <div class="collapsible-body">
-
-              <ul>
-
-                <li>
-
-                  <a href="../category/category-v1.html" class="waves-effect">Category V.1</a>
-
-                </li>
-
-                <li>
-
-                  <a href="../category/category-v2.html" class="waves-effect">Category V.2</a>
-
-                </li>
-
-                <li>
-
-                  <a href="../category/category-v3.html" class="waves-effect">Category V.3</a>
-
-                </li>
-
-                <li>
-
-                  <a href="../category/category-v4.html" class="waves-effect">Category V.4</a>
-
-                </li>
-
-              </ul>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <a class="collapsible-header waves-effect arrow-r">
-
-              <i class="far fa-bookmark"></i> Homepage
-
-              <i class="fas fa-angle-down rotate-icon"></i>
-
-            </a>
-
-            <div class="collapsible-body">
-
-              <ul>
-
-                <li>
-
-                  <a href="../homepage/homepage-v1.html" class="waves-effect">Homepage V.1</a>
-
-                </li>
-
-                <li>
-
-                  <a href="../homepage/homepage-v2.html" class="waves-effect">Homepage V.2</a>
-
-                </li>
-
-                <li>
-
-                  <a href="../homepage/homepage-v3.html" class="waves-effect">Homepage V.3</a>
-
-                </li>
-
-              </ul>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <a class="collapsible-header waves-effect arrow-r">
-
-              <i class="fas fa-camera-retro"></i> Product page
-
-              <i class="fas fa-angle-down rotate-icon"></i>
-
-            </a>
-
-            <div class="collapsible-body">
-
-              <ul>
-
-                <li>
-
-                  <a href="../product/product-v1.html" class="waves-effect">Product V.1</a>
-
-                </li>
-
-                <li>
-
-                  <a href="../product/product-v2.html" class="waves-effect">Product V.2</a>
-
-                </li>
-
-              </ul>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <a href="../contact/contact.html" class="collapsible-header waves-effect">
-
-              <i class="fas fa-envelope"></i> Contact</a>
-
-          </li>
-
-        </ul>
-
-      </li>
-
-      <!-- Side navigation links -->
-      <div class="sidenav-bg mask-strong"></div>
-
-    </ul>
-    <!-- Sidebar navigation -->
-
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg  navbar-light scrolling-navbar white">
-
-      <div class="container">
-
-        <!-- SideNav slide-out button -->
-        <div class="float-left mr-2">
-
-          <a href="#" data-activates="slide-out" class="button-collapse">
-
-            <i class="fas fa-bars"></i>
-
-          </a>
-
-        </div>
-
-        <a class="navbar-brand font-weight-bold" href="#">
-
-          <strong>OctoPy</strong>
-
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
-          aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-
-          <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-
-          <ul class="navbar-nav ml-auto">
-
-            <li class="nav-item dropdown notifications-nav">
-              <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span class="badge red" id="navbarNotificationCounter"></span> <i class="fas fa-bell blue-text"></i>
-                <span class="d-none d-md-inline-block font-weight-bold">Notifications</span>
               </a>
 
-              <div class="dropdown-menu dropdown-primary fluid" aria-labelledby="navbarDropdownMenuLink">
-                {% for notification in notifications %}
-                <a class="dropdown-item" id="button-{{notification.notification_id}}">
-                  <i class="far fa-envelope mr-2" aria-hidden="true"></i>
-                  <span>{{notification.content}}</span>
-                  <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> <span id='noti-{{notification.notification_id}}'></span>
-                  <input type="text" value="{{notification.notification_id}}" id="id-{{notification.notification_id}}" hidden>
-                </a>
-                <script type="text/javascript">
-                   $("#navbarNotificationCounter").html("{{forloop.counter}}");
-                   var ago = jQuery.timeago(new Date("{{notification.datetime|date:'c'}}"));
-                   $("#noti-{{notification.notification_id}}").html(ago); 
-                   $('#button-{{notification.notification_id}}').on( "click", function(e) {
-                       e.preventDefault();
-                        console.log("Clicked! "+$('#id-{{notification.notification_id}}').val());
-                          $.ajax({
-                              type:'POST',
-                              url:" ",
-                              data:{
-                              notification_id: $('#id-{{notification.notification_id}}').val(),
-                              csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
-                              action: 'notificationRead'
-                              },
-                              success:function(json){
-                              location.reload();            
-                              },
-                              error : function(xhr,errmsg,err) {
-                              console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
-                          }
-                          });
-                      });
-                  
-                </script>
-                {% endfor %}
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect"><i class="fas fa-envelope blue-text"></i> <span
-                  class="clearfix d-none d-sm-inline-block font-weight-bold">Contact</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect"><i class="fas fa-comments blue-text"></i> <span
-                  class="clearfix d-none d-sm-inline-block font-weight-bold">Support</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle waves-effect" href="#" id="adminDropdown" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-admin blue-text"></i> <span class="clearfix d-none d-sm-inline-block font-weight-bold">Profile</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
-                <form method="POST"  autocomplete="off" enctype="multipart/form-data" id="logoutButton" action="logout">
-                  {% csrf_token %}
-                <a class="dropdown-item">Logout</a>
-                </form>
-                <a class="dropdown-item" href="#">My account</a>
-              </div>
             </li>
 
+            <li>
+
+              <a class="pin-ic">
+
+                <i class="fab fa-pinterest"> </i>
+
+              </a>
+
+            </li>
+
+            <li>
+
+              <a class="gplus-ic">
+
+                <i class="fab fa-google-plus-g"> </i>
+
+              </a>
+
+            </li>
+
+            <li>
+
+              <a class="tw-ic">
+
+                <i class="fab fa-twitter"> </i>
+
+              </a>
+
+            </li>
 
           </ul>
 
-        </div>
+        </li>
+        <!-- Social -->
 
-      </div>
+        <!-- Search Form -->
+        <li>
 
-    </nav>
-    <!-- Navbar -->
+          <form class="search-form" role="search">
 
-  </header>
-  <!-- Navigation -->
+            <div class="form-group md-form mt-0 pt-1 waves-light">
 
-  <!-- Intro -->
- <section>
+              <input type="text" class="form-control" placeholder="Search">
 
- </section>
-  <!-- Intro -->
-
-  <!-- Main Container -->
-  <div class="container" >
-    <main>
-      <div class="container-fluid">
-  
-        <!-- Section: Intro -->
-        <section class="mt-md-4 pt-md-2 mb-5 pb-4">
-  
-          <!-- Grid row -->
-          <div class="row">
-  
-            <!-- Grid column -->
-            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-  
-              <!-- Card -->
-              <div class="card card-cascade cascading-admin-card">
-  
-                <!-- Card Data -->
-                <div class="admin-up">
-                  <i class="far fa-money-bill-alt primary-color mr-3 z-depth-2"></i>
-                  <div class="data">
-                    <p class="text-uppercase">sales</p>
-                    <h4 class="font-weight-bold dark-grey-text">2000$</h4>
-                  </div>
-                </div>
-  
-                <!-- Card content -->
-                <div class="card-body card-body-cascade">
-                  <div class="progress mb-3">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="card-text">Better than last week (25%)</p>
-                </div>
-  
-              </div>
-              <!-- Card -->
-  
             </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-  
-              <!-- Card -->
-              <div class="card card-cascade cascading-admin-card">
-  
-                <!-- Card Data -->
-                <div class="admin-up">
-                  <i class="fas fa-chart-line warning-color mr-3 z-depth-2"></i>
-                  <div class="data">
-                    <p class="text-uppercase">subscriptions</p>
-                    <h4 class="font-weight-bold dark-grey-text">200</h4>
-                  </div>
-                </div>
-  
-                <!-- Card content -->
-                <div class="card-body card-body-cascade">
-                  <div class="progress mb-3">
-                    <div class="progress-bar red accent-2" role="progressbar" style="width: 25%" aria-valuenow="25"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="card-text">Worse than last week (25%)</p>
-                </div>
-  
+
+          </form>
+
+        </li>
+        <!-- Search Form -->
+
+        <!-- Side navigation links -->
+        <li>
+
+          <ul class="collapsible collapsible-accordion">
+
+            <li>
+
+              <a class="collapsible-header waves-effect arrow-r">
+
+                <i class="fas fa-shopping-cart"></i> Cart page
+
+                <i class="fas fa-angle-down rotate-icon"></i>
+
+              </a>
+
+              <div class="collapsible-body">
+
+                <ul>
+
+                  <li>
+
+                    <a href="../cart/cart-v1.html" class="waves-effect">Cart V.1</a>
+
+                  </li>
+
+                  <li>
+
+                    <a href="../cart/cart-v2.html" class="waves-effect">Cart V.2</a>
+
+                  </li>
+
+                </ul>
+
               </div>
-              <!-- Card -->
-  
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
-  
-              <!-- Card -->
-              <div class="card card-cascade cascading-admin-card">
-  
-                <!-- Card Data -->
-                <div class="admin-up">
-                  <i class="fas fa-chart-pie light-blue lighten-1 mr-3 z-depth-2"></i>
-                  <div class="data">
-                    <p class="text-uppercase">traffic</p>
-                    <h4 class="font-weight-bold dark-grey-text">20000</h4>
-                  </div>
-                </div>
-  
-                <!-- Card content -->
-                <div class="card-body card-body-cascade">
-                  <div class="progress mb-3">
-                    <div class="progress-bar red accent-2" role="progressbar" style="width: 75%" aria-valuenow="75"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="card-text">Worse than last week (75%)</p>
-                </div>
-  
+
+            </li>
+
+            <li>
+
+              <a class="collapsible-header waves-effect arrow-r">
+
+                <i class="far fa-hand-pointer"></i> Category page
+
+                <i class="fas fa-angle-down rotate-icon"></i>
+
+              </a>
+
+              <div class="collapsible-body">
+
+                <ul>
+
+                  <li>
+
+                    <a href="../category/category-v1.html" class="waves-effect">Category V.1</a>
+
+                  </li>
+
+                  <li>
+
+                    <a href="../category/category-v2.html" class="waves-effect">Category V.2</a>
+
+                  </li>
+
+                  <li>
+
+                    <a href="../category/category-v3.html" class="waves-effect">Category V.3</a>
+
+                  </li>
+
+                  <li>
+
+                    <a href="../category/category-v4.html" class="waves-effect">Category V.4</a>
+
+                  </li>
+
+                </ul>
+
               </div>
-              <!-- Card -->
-  
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-xl-3 col-md-6 mb-0">
-  
-              <!-- Card -->
-              <div class="card card-cascade cascading-admin-card">
-  
-                <!-- Card Data -->
-                <div class="admin-up">
-                  <i class="fas fa-chart-bar red accent-2 mr-3 z-depth-2"></i>
-                  <div class="data">
-                    <p class="text-uppercase">organic traffic</p>
-                    <h4 class="font-weight-bold dark-grey-text">2000</h4>
-                  </div>
-                </div>
-  
-                <!-- Card content -->
-                <div class="card-body card-body-cascade">
-                  <div class="progress mb-3">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p class="card-text">Better than last week (25%)</p>
-                </div>
-  
+
+            </li>
+
+            <li>
+
+              <a class="collapsible-header waves-effect arrow-r">
+
+                <i class="far fa-bookmark"></i> Homepage
+
+                <i class="fas fa-angle-down rotate-icon"></i>
+
+              </a>
+
+              <div class="collapsible-body">
+
+                <ul>
+
+                  <li>
+
+                    <a href="../homepage/homepage-v1.html" class="waves-effect">Homepage V.1</a>
+
+                  </li>
+
+                  <li>
+
+                    <a href="../homepage/homepage-v2.html" class="waves-effect">Homepage V.2</a>
+
+                  </li>
+
+                  <li>
+
+                    <a href="../homepage/homepage-v3.html" class="waves-effect">Homepage V.3</a>
+
+                  </li>
+
+                </ul>
+
               </div>
-              <!-- Card -->
-  
-            </div>
-            <!-- Grid column -->
-  
+
+            </li>
+
+            <li>
+
+              <a class="collapsible-header waves-effect arrow-r">
+
+                <i class="fas fa-camera-retro"></i> Product page
+
+                <i class="fas fa-angle-down rotate-icon"></i>
+
+              </a>
+
+              <div class="collapsible-body">
+
+                <ul>
+
+                  <li>
+
+                    <a href="../product/product-v1.html" class="waves-effect">Product V.1</a>
+
+                  </li>
+
+                  <li>
+
+                    <a href="../product/product-v2.html" class="waves-effect">Product V.2</a>
+
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </li>
+
+            <li>
+
+              <a href="../contact/contact.html" class="collapsible-header waves-effect">
+
+                <i class="fas fa-envelope"></i> Contact</a>
+
+            </li>
+
+          </ul>
+
+        </li>
+
+        <!-- Side navigation links -->
+        <div class="sidenav-bg mask-strong"></div>
+
+      </ul>
+      <!-- Sidebar navigation -->
+
+      <!-- Navbar -->
+      <nav class="navbar fixed-top navbar-expand-lg  navbar-light scrolling-navbar white">
+
+        <div class="container">
+
+          <!-- SideNav slide-out button -->
+          <div class="float-left mr-2">
+
+            <a href="#" data-activates="slide-out" class="button-collapse">
+
+              <i class="fas fa-bars"></i>
+
+            </a>
+
           </div>
-          <!-- Grid row -->
-  
-        </section>
-        <!-- Section: Intro -->
-  
-        <!-- Section: Main panel -->
-        <section class="mb-5">
-  
-          <!-- Card -->
-          <div class="card card-cascade narrower">
-  
-            <!-- Section: Chart -->
-            <section>
-  
-              <!-- Grid row -->
-              <div class="row justify-content-md-center" >
-  
-            
-  
-                <!-- Grid column -->
-                <div class="col-xl-5 col-lg-12 mb-4 pb-2">
-  
-                  <!-- Chart -->
-                  <div class="view view-cascade gradient-card-header blue-gradient">
-  
-                    <canvas id="lineChart" height="175"></canvas>
-  
-                  </div>
-  
-                </div>
-                <!-- Grid column -->
 
-                  
-                <!-- Grid column -->
-                <div class="col-xl-5 col-lg-12 mb-4 pb-2">
-  
-                  <!-- Chart -->
-                  <div class="view view-cascade gradient-card-header blue-gradient">
-  
-                    <canvas id="barChart" height="175"></canvas>
-  
-                  </div>
-  
-                </div>
-                <!-- Grid column -->
-  
-              </div>
-              <!-- Grid row -->
-  
-            </section>
-            <!-- Section: Chart -->
-  
-            <!-- Section: Table -->
-            <section>
-  
-        <!-- Gird column -->
-        <div class="col-md-12  shadow-5">
+          <a class="navbar-brand font-weight-bold" href="#">
 
-          <div class="card">
-                      <!-- Card image -->
+            <strong>OctoPy</strong>
 
-          <!-- /Card image -->
-            <div class="card-body">
-              <table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="100%">
-                <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
-                  <br>
-                  <a href="" class="white-text mx-3">User Request</a>
-                  <br>
-                </div>
-                <thead align="center">
-                  <tr>
-                    <th>Date
-                    </th>
-                    <th>Name
-                    </th>
-                    <th>Subject
-                    </th>
-                    <th>Status
-                    </th>
-                    <th>Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for request in requests %}
-                  <tr>
-                    <input type="text" value="{{request.request_id}}" id="id-{{request.request_id}}" hidden>
-                    <input type="text" value="{{request.child_id_id}}" id="user-{{request.request_id}}" hidden>
-                    <td>{{request.date}}</td>
-                    <td>{{request.firstname}}, {{request.lastname}}</td>
-                    <td>{{request.content}}</td>
-                    <td>{{request.status}}</td>
-                    <td>
-                      <button class="btn blue-gradient btn-rounded waves-effect waves-light btn-sm" id="accept-{{request.request_id}}">Accept</button>
-                      <button class="btn peach-gradient btn-rounded waves-effect waves-light btn-sm" id="reject-{{request.request_id}}">Reject</button>
-                        <script>
-                            // console.log( $('#id-{{request.request_id}}').val());
-                             $('#accept-{{request.request_id}}').on( "click", function(e) {
-                                 e.preventDefault();
-                                  console.log("Clicked! "+$('#id-{{request.request_id}}').val());
-                                    $.ajax({
-                                        type:'POST',
-                                        url:" ",
-                                        data:{
-                                        admin_id: "{{user_id}}",
-                                        user_id: $('#user-{{request.request_id}}').val(),
-                                        request_id: $('#id-{{request.request_id}}').val(),
-                                        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
-                                        action: 'requestAccepted'
-                                        },
-                                        success:function(json){
-                                        location.reload();            
-                                        },
-                                        error : function(xhr,errmsg,err) {
-                                        console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
-                                    }
-                                    });
-                                });
+          </a>
 
-                                $('#reject-{{request.request_id}}').on( "click", function(e) {
-                                 e.preventDefault();
-                                  console.log("Clicked! "+$('#id-{{request.request_id}}').val());
-                                    $.ajax({
-                                        type:'POST',
-                                        url:" ",
-                                        data:{
-                                        admin_id: "{{user_id}}",
-                                        user_id: $('#user-{{request.request_id}}').val(),
-                                        request_id: $('#id-{{request.request_id}}').val(),
-                                        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
-                                        action: 'requestRejected'
-                                        },
-                                        success:function(json){
-                                        location.reload();            
-                                        },
-                                        error : function(xhr,errmsg,err) {
-                                        console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
-                                    }
-                                    });
-                                });
-                        </script>
-                    </td>
-                  </tr>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+
+            <ul class="navbar-nav ml-auto">
+
+              <li class="nav-item dropdown notifications-nav">
+                <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <span class="badge red" id="navbarNotificationCounter"></span> <i class="fas fa-bell blue-text"></i>
+                  <span class="d-none d-md-inline-block font-weight-bold">Notifications</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-primary fluid" aria-labelledby="navbarDropdownMenuLink">
+                  {% for notification in notifications %}
+                  <a class="dropdown-item" id="button-{{notification.notification_id}}">
+                    <i class="far fa-envelope mr-2" aria-hidden="true"></i>
+                    <span>{{notification.content}}</span>
+                    <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> <span id='noti-{{notification.notification_id}}'></span>
+                    <input type="text" value="{{notification.notification_id}}" id="id-{{notification.notification_id}}" hidden>
+                  </a>
+                  <script type="text/javascript">
+                     $("#navbarNotificationCounter").html("{{forloop.counter}}");
+                     var ago = jQuery.timeago(new Date("{{notification.datetime|date:'c'}}"));
+                     $("#noti-{{notification.notification_id}}").html(ago); 
+                     $('#button-{{notification.notification_id}}').on( "click", function(e) {
+                         e.preventDefault();
+                          console.log("Clicked! "+$('#id-{{notification.notification_id}}').val());
+                            $.ajax({
+                                type:'POST',
+                                url:" ",
+                                data:{
+                                notification_id: $('#id-{{notification.notification_id}}').val(),
+                                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                                action: 'notificationRead'
+                                },
+                                success:function(json){
+                                location.reload();            
+                                },
+                                error : function(xhr,errmsg,err) {
+                                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                            }
+                            });
+                        });
+                    
+                  </script>
                   {% endfor %}
-                </tbody>
-              </table>
-            </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect"><i class="fas fa-envelope blue-text"></i> <span
+                    class="clearfix d-none d-sm-inline-block font-weight-bold">Contact</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect"><i class="fas fa-comments blue-text"></i> <span
+                    class="clearfix d-none d-sm-inline-block font-weight-bold">Support</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle waves-effect" href="#" id="adminDropdown" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-admin blue-text"></i> <span class="clearfix d-none d-sm-inline-block font-weight-bold">Profile</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
+                  <form method="POST"  autocomplete="off" enctype="multipart/form-data" id="logoutButton" action="logout">
+                    {% csrf_token %}
+                  <a class="dropdown-item">Logout</a>
+                  </form>
+                <a class="dropdown-item" href="#" data-toggle="modal" href="#" data-target="#update_user-{{user.user_id}}">My Account</a>               
+                </div>
+              </li>
+
+
+            </ul>
+
           </div>
 
         </div>
-        <!-- Gird column -->
-            </section>
-            <!--Section: Table-->
-  
-          </div>
-          <!-- Card -->
-  
-        </section>
-        <!-- Section: Main panel -->
-  
-        <!-- Section: Cascading panels -->
-        <section class="mb-5">
-  
-          <!-- Grid row -->
-          <div class="row">
-  
-            <!-- Grid column -->
-            <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-  
-              <!-- Panel -->
-              <div class="card">
-  
-                <div class="card-header white-text primary-color">
-                  Things to improve
-                </div>
-  
-                <div class="card-body text-center px-4 mb-3">
-                  <div class="list-group list-panel">
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i>
-                    </a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i>
-                    </a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i>
-                    </a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i>
-                    </a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i>
-                    </a>
-                  </div>
-                </div>
-  
-              </div>
-              <!-- Panel -->
-  
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
-  
-              <!-- Panel -->
-              <div class="card">
-  
-                <div class="card-header white-text primary-color">
-                  Tasks to do
-                </div>
-  
-                <div class="card-body text-center px-4 mb-3">
-                  <div class="list-group list-panel">
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                  </div>
-                </div>
-  
-              </div>
-              <!-- Panel -->
-  
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-lg-4 col-md-6 mb-0">
-  
-              <!-- Panel -->
-              <div class="card">
-  
-                <div class="card-header white-text primary-color">
-                  Statistics
-                </div>
-  
-                <div class="card-body text-center px-4 mb-3">
-                  <div class="list-group list-panel">
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                    <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
-                      <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
-                        title="Click to fix"></i></a>
-                  </div>
-                </div>
-  
-              </div>
-              <!-- Panel -->
-  
-            </div>
-            <!-- Grid column -->
-  
-          </div>
-          <!-- Grid row -->
-  
-        </section>
-        <!--Section: Cascading panels-->
-  
-        <!-- Section: Classic admin cards -->
-        <section class="pb-3">
-  
-          <!-- Grid row -->
-          <div class="row">
-  
-            <!-- Grid column -->
-            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-  
-              <!-- Card Primary -->
-              <div class="card classic-admin-card primary-color">
-                <div class="card-body">
-                  <div class="pull-right">
-                    <i class="far fa-money-bill-alt"></i>
-                  </div>
-                  <p class="white-text">SALES</p>
-                  <h4 class="check">2000$</h4>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar bg grey darken-3" role="progressbar" style="width: 25%" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="card-body">
-                  <p>Better than last week (25%)</p>
-                </div>
-              </div>
-              <!-- Card Primary -->
-  
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-  
-              <!-- Card Yellow -->
-              <div class="card classic-admin-card warning-color">
-                <div class="card-body">
-                  <div class="pull-right">
-                    <i class="fas fa-chart-line"></i>
-                  </div>
-                  <p>SUBSCRIPTIONS</p>
-                  <h4 class="check">200</h4>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar bg grey darken-3" role="progressbar" style="width: 25%" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="card-body">
-                  <p>Worse than last week (25%)</p>
-                </div>
-              </div>
-              <!-- Card Yellow -->
-  
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
-  
-              <!-- Card Blue -->
-              <div class="card classic-admin-card light-blue lighten-1">
-                <div class="card-body">
-                  <div class="pull-right">
-                    <i class="fas fa-chart-pie"></i>
-                  </div>
-                  <p>TRAFFIC</p>
-                  <h4 class="check">20000</h4>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar bg grey darken-4" role="progressbar" style="width: 75%" aria-valuenow="75"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="card-body">
-                  <p>Better than last week (75%)</p>
-                </div>
-              </div>
-              <!-- Card Blue -->
-  
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-xl-3 col-md-6 mb-0">
-  
-              <!-- Card Red -->
-              <div class="card classic-admin-card red accent-2">
-                <div class="card-body">
-                  <div class="pull-right">
-                    <i class="fas fa-chart-bar"></i>
-                  </div>
-                  <p>ORGANIC TRAFFIC</p>
-                  <h4 class="check">2000</h4>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar bg grey darken-4" role="progressbar" style="width: 25%" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="card-body">
-                  <p>Better than last week (25%)</p>
-                </div>
-              </div>
-              <!-- Card Red -->
-  
-            </div>
-            <!-- Grid column -->
-  
-          </div>
-          <!-- Grid row -->
-  
-        </section>
-        <!-- Section: Classic admin cards -->
-  
-      </div>
-    </main>
 
+      </nav>
+      <!-- Navbar -->
+ {% for user in users %}
+   <!--Update User Information Modal-->
+   <div class="modal fade" id="update_user-{{users.user_id}}" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content" >
+      <div class="modal-header white-text primary-color">
+      <h4 class="modal-title" id="viewModalLabel">
+        <strong>ADMINISTRATOR INFORMATION</strong></h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <form id="updateForm" method="post">
+      {% csrf_token %}
+      <div class="modal-body">
+        <input type="text" name="user-id" value="{{user.user_id}}" hidden>
+        <div class="row">
+        &nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
+          <p><strong>First Name</strong></p><input type="text" class="form-control" placeholder="First Name" id="user_firstname" name="user-firstname" value="{{user.firstname}}" required minlength="1" maxlength="30">
+        </div>
+        &nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
+          <p><strong>Last Name</strong></p><input type="text" class="form-control" placeholder="Last Name" id="user_lastname" name="user-lastname" value="{{user.lastname}}" required minlength="1" maxlength="50">
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        &nbsp&nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
+          <p><strong>Age</strong></p><input type="number" style ="width : 220px;"  class="form-control" placeholder="Age" id="user_age" name="user-age" value="{{user.age}}" min="6" max="8">
+        </div>
+        &nbsp&nbsp&nbsp&nbsp<div class="col-xs-3">
+          <p><strong>Username</strong></p><input type="text" class="form-control" placeholder="Username" id="user_username" name="user-username" value="{{user.username}}" required minlength="1" maxlength="50">               
+        </div>
+        </div>
+        <br>
+        <div class="modal-footer" class="modal-header white-text warning-color">
+        <button type="submit" id="user_update" name="user-update" class="btn btn-danger">UPDATE</button>
+        </div>
+      </div>
+      </form>
+    </div>
+    </div>
   </div>
-  <!-- Main Container -->
+  <!--End Update User Information Modal-->
+  {% endfor %}
 
-  <!-- Footer -->
-  <footer class="page-footer text-center text-md-left stylish-color-dark pt-0">
+    </header>
+    <!-- Navigation -->
 
-    <div style="background-color: #4285f4;">
+    <!-- Intro -->
+   <section>
 
-      <div class="container">
+   </section>
+    <!-- Intro -->
 
-        <!-- Grid row -->
-        <div class="row py-4 d-flex align-items-center">
+    <!-- Main Container -->
+    <div class="container" >
+      <main>
+        <div class="container-fluid">
+    
+          <!-- Section: Intro -->
+          <section class="mt-md-4 pt-md-2 mb-5 pb-4">
+    
+            <!-- Grid row -->
+            <div class="row">
+    
+              <!-- Grid column -->
+              <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+    
+                <!-- Card -->
+                <div class="card card-cascade cascading-admin-card">
+    
+                  <!-- Card Data -->
+                  <div class="admin-up">
+                    <i class="far fa-money-bill-alt primary-color mr-3 z-depth-2"></i>
+                    <div class="data">
+                      <p class="text-uppercase">sales</p>
+                      <h4 class="font-weight-bold dark-grey-text">2000$</h4>
+                    </div>
+                  </div>
+    
+                  <!-- Card content -->
+                  <div class="card-body card-body-cascade">
+                    <div class="progress mb-3">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-text">Better than last week (25%)</p>
+                  </div>
+    
+                </div>
+                <!-- Card -->
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+    
+                <!-- Card -->
+                <div class="card card-cascade cascading-admin-card">
+    
+                  <!-- Card Data -->
+                  <div class="admin-up">
+                    <i class="fas fa-chart-line warning-color mr-3 z-depth-2"></i>
+                    <div class="data">
+                      <p class="text-uppercase">subscriptions</p>
+                      <h4 class="font-weight-bold dark-grey-text">200</h4>
+                    </div>
+                  </div>
+    
+                  <!-- Card content -->
+                  <div class="card-body card-body-cascade">
+                    <div class="progress mb-3">
+                      <div class="progress-bar red accent-2" role="progressbar" style="width: 25%" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-text">Worse than last week (25%)</p>
+                  </div>
+    
+                </div>
+                <!-- Card -->
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
+    
+                <!-- Card -->
+                <div class="card card-cascade cascading-admin-card">
+    
+                  <!-- Card Data -->
+                  <div class="admin-up">
+                    <i class="fas fa-chart-pie light-blue lighten-1 mr-3 z-depth-2"></i>
+                    <div class="data">
+                      <p class="text-uppercase">traffic</p>
+                      <h4 class="font-weight-bold dark-grey-text">20000</h4>
+                    </div>
+                  </div>
+    
+                  <!-- Card content -->
+                  <div class="card-body card-body-cascade">
+                    <div class="progress mb-3">
+                      <div class="progress-bar red accent-2" role="progressbar" style="width: 75%" aria-valuenow="75"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-text">Worse than last week (75%)</p>
+                  </div>
+    
+                </div>
+                <!-- Card -->
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-xl-3 col-md-6 mb-0">
+    
+                <!-- Card -->
+                <div class="card card-cascade cascading-admin-card">
+    
+                  <!-- Card Data -->
+                  <div class="admin-up">
+                    <i class="fas fa-chart-bar red accent-2 mr-3 z-depth-2"></i>
+                    <div class="data">
+                      <p class="text-uppercase">organic traffic</p>
+                      <h4 class="font-weight-bold dark-grey-text">2000</h4>
+                    </div>
+                  </div>
+    
+                  <!-- Card content -->
+                  <div class="card-body card-body-cascade">
+                    <div class="progress mb-3">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-text">Better than last week (25%)</p>
+                  </div>
+    
+                </div>
+                <!-- Card -->
+    
+              </div>
+              <!-- Grid column -->
+    
+            </div>
+            <!-- Grid row -->
+    
+          </section>
+          <!-- Section: Intro -->
+    
+          <!-- Section: Main panel -->
+          <section class="mb-5">
+    
+            <!-- Card -->
+            <div class="card card-cascade narrower">
+    
+              <!-- Section: Chart -->
+              <section>
+    
+                <!-- Grid row -->
+                <div class="row justify-content-md-center" >
+    
+              
+    
+                  <!-- Grid column -->
+                  <div class="col-xl-5 col-lg-12 mb-4 pb-2">
+    
+                    <!-- Chart -->
+                    <div class="view view-cascade gradient-card-header blue-gradient">
+    
+                      <canvas id="lineChart" height="175"></canvas>
+    
+                    </div>
+    
+                  </div>
+                  <!-- Grid column -->
 
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    
+                  <!-- Grid column -->
+                  <div class="col-xl-5 col-lg-12 mb-4 pb-2">
+    
+                    <!-- Chart -->
+                    <div class="view view-cascade gradient-card-header blue-gradient">
+    
+                      <canvas id="barChart" height="175"></canvas>
+    
+                    </div>
+    
+                  </div>
+                  <!-- Grid column -->
+    
+                </div>
+                <!-- Grid row -->
+    
+              </section>
+              <!-- Section: Chart -->
+    
+              <!-- Section: Table -->
+              <section>
+    
+          <!-- Gird column -->
+          <div class="col-md-12  shadow-5">
 
-            <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
+            <div class="card">
+                        <!-- Card image -->
+
+            <!-- /Card image -->
+              <div class="card-body">
+                <table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="100%">
+                  <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+                    <br>
+                    <a href="" class="white-text mx-3">User Request</a>
+                    <br>
+                  </div>
+                  <thead align="center">
+                    <tr>
+                      <th>Date
+                      </th>
+                      <th>Name
+                      </th>
+                      <th>Subject
+                      </th>
+                      <th>Status
+                      </th>
+                      <th>Action
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for request in requests %}
+                    <tr>
+                      <input type="text" value="{{request.request_id}}" id="id-{{request.request_id}}" hidden>
+                      <input type="text" value="{{request.child_id_id}}" id="user-{{request.request_id}}" hidden>
+                      <td>{{request.date}}</td>
+                      <td>{{request.firstname}}, {{request.lastname}}</td>
+                      <td>{{request.content}}</td>
+                      <td>{{request.status}}</td>
+                      <td>
+                        <button class="btn blue-gradient btn-rounded waves-effect waves-light btn-sm" id="accept-{{request.request_id}}">Accept</button>
+                        <button class="btn peach-gradient btn-rounded waves-effect waves-light btn-sm" id="reject-{{request.request_id}}">Reject</button>
+                          <script>
+                              // console.log( $('#id-{{request.request_id}}').val());
+                               $('#accept-{{request.request_id}}').on( "click", function(e) {
+                                   e.preventDefault();
+                                    console.log("Clicked! "+$('#id-{{request.request_id}}').val());
+                                      $.ajax({
+                                          type:'POST',
+                                          url:" ",
+                                          data:{
+                                          admin_id: "{{user_id}}",
+                                          user_id: $('#user-{{request.request_id}}').val(),
+                                          request_id: $('#id-{{request.request_id}}').val(),
+                                          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                                          action: 'requestAccepted'
+                                          },
+                                          success:function(json){
+                                          location.reload();            
+                                          },
+                                          error : function(xhr,errmsg,err) {
+                                          console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                                      }
+                                      });
+                                  });
+
+                                  $('#reject-{{request.request_id}}').on( "click", function(e) {
+                                   e.preventDefault();
+                                    console.log("Clicked! "+$('#id-{{request.request_id}}').val());
+                                      $.ajax({
+                                          type:'POST',
+                                          url:" ",
+                                          data:{
+                                          admin_id: "{{user_id}}",
+                                          user_id: $('#user-{{request.request_id}}').val(),
+                                          request_id: $('#id-{{request.request_id}}').val(),
+                                          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                                          action: 'requestRejected'
+                                          },
+                                          success:function(json){
+                                          location.reload();            
+                                          },
+                                          error : function(xhr,errmsg,err) {
+                                          console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                                      }
+                                      });
+                                  });
+                          </script>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
           </div>
-          <!-- Grid column -->
+          
+         <!-- Update and Delete User column -->
+          <div class="col-md-12  shadow-5">
 
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-7 text-center text-md-right">
+            <div class="card">
+                        <!-- Card image -->
 
-            <!-- Facebook -->
-            <a class="fb-ic ml-0 px-2">
+            <!-- /Card image -->
+              <div class="card-body">
+                <table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="100%">
+                  <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+                    <br>
+                    <a href="" class="white-text mx-3">Update and Delete a User</a>
+                    <br>
+                  </div>
+                  <thead align="center">
+                    <tr>
+                      <th>Name
+                      </th>
+                      <th>Age
+                      </th>
+                      <th>Username
+                      </th>
+                      <th>Action
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for user in userss %}
+                    <tr>
+                       <td>{{user.firstname}}, {{user.lastname}}</td>
+                   <td>{{user.age}}</td>
+                   <td>{{user.username}}</td>
+                       <td>
+                        <center><a><button class="btn blue-gradient btn-rounded waves-effect waves-light btn-sm" id="" data-toggle="modal" href="#" data-target="#update_user-{{user.user_id}}">Update</button></a>
+                        <a><button class="btn peach-gradient btn-rounded waves-effect waves-light btn-sm" id="" data-toggle="modal" href="#" data-target="#delete_user-{{user.user_id}}">Delete</button></a></center>
+                       </td>
+                    </tr>
+            
+             <!--Update User Information Modal-->
+             <div class="modal fade" id="update_user-{{user.user_id}}" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+              <div class="modal-content" >
+                <div class="modal-header white-text primary-color">
+                <h4 class="modal-title" id="viewModalLabel">
+                  <strong>USER INFORMATION</strong></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
 
-              <i class="fab fa-facebook-f white-text"> </i>
-
-            </a>
-
-            <!-- Twitter -->
-            <a class="tw-ic px-2">
-
-              <i class="fab fa-twitter white-text"> </i>
-
-            </a>
-
-            <!-- Google + -->
-            <a class="gplus-ic px-2">
-
-              <i class="fab fa-google-plus-g white-text"> </i>
-
-            </a>
-
-            <!-- Linkedin -->
-            <a class="li-ic px-2">
-
-              <i class="fab fa-linkedin-in white-text"> </i>
-
-            </a>
-
-            <!-- Instagram -->
-            <a class="ins-ic px-2">
-
-              <i class="fab fa-instagram white-text"> </i>
-
-            </a>
+                <form id="updateForm" method="post">
+                {% csrf_token %}
+                <div class="modal-body">
+                  <input type="text" name="user-id" value="{{user.user_id}}" hidden>
+                  <div class="row">
+                  &nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
+                    <p><strong>First Name</strong></p><input type="text" class="form-control" placeholder="First Name" id="user_firstname" name="user-firstname" value="{{user.firstname}}" required minlength="1" maxlength="30">
+                  </div>
+                  &nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
+                    <p><strong>Last Name</strong></p><input type="text" class="form-control" placeholder="Last Name" id="user_lastname" name="user-lastname" value="{{user.lastname}}" required minlength="1" maxlength="50">
+                  </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                  &nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
+                    <p><strong>Age</strong></p><input type="number" style ="width:220px;" class="form-control" placeholder="Age" id="user_age" name="user-age" value="{{user.age}}" min="6" max="8">
+                  </div>
+                  &nbsp&nbsp&nbsp&nbsp<div class="col-xs-3">
+                    <p><strong>Username</strong></p><input type="text" class="form-control" placeholder="Username" id="user_username" name="user-username" value="{{user.username}}" required minlength="1" maxlength="50">                            
+                  </div>
+                  </div>
+                  <br>
+                  <div class="modal-footer" class="modal-header white-text primary-color">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">CANCEL</button>
+                  <button type="submit" id="user_update" name="user-update" class="btn btn-danger">UPDATE</button>
+                  </div>
+                </div>
+                </form>
+              </div>
+              </div>
+            </div>
+            <!--End Update User Information Modal-->
+            
+            <!-- Delete User Information Modal -->
+            <div class="modal fade" id="delete_user-{{user.user_id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header white-text warning-color">
+                <h4 class="modal-title" id="deleteModalLabel"><strong>DELETE RECORD</strong></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <form id="deleteForm" method="post">
+                  {% csrf_token %}
+                  <input type="text" name="user-idDelete" value={{user.user_id}} hidden>
+                  <p>Are you sure you want to delete this record?</p>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">NO</button>
+                  <button type="submit" id="user_delete" name="user-delete" class="btn btn-danger">YES</button>
+                  </div>
+                </form>
+                </div>
+              </div>
+              </div>
+            </div>
+            <!-- End Delete User Information Modal -->
+            
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
           </div>
-          <!-- Grid column -->
-
+          <!--End Update and Delete User column -->
+          
+              </section>
+              <!--Section: Table-->
+    
+            </div>
+            <!-- Card -->
+    
+          </section>
+          <!-- Section: Main panel -->
+    
+          <!-- Section: Cascading panels -->
+          <section class="mb-5">
+    
+            <!-- Grid row -->
+            <div class="row">
+    
+              <!-- Grid column -->
+              <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+    
+                <!-- Panel -->
+                <div class="card">
+    
+                  <div class="card-header white-text primary-color">
+                    Things to improve
+                  </div>
+    
+                  <div class="card-body text-center px-4 mb-3">
+                    <div class="list-group list-panel">
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i>
+                      </a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i>
+                      </a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i>
+                      </a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i>
+                      </a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i>
+                      </a>
+                    </div>
+                  </div>
+    
+                </div>
+                <!-- Panel -->
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+    
+                <!-- Panel -->
+                <div class="card">
+    
+                  <div class="card-header white-text primary-color">
+                    Tasks to do
+                  </div>
+    
+                  <div class="card-body text-center px-4 mb-3">
+                    <div class="list-group list-panel">
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                    </div>
+                  </div>
+    
+                </div>
+                <!-- Panel -->
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-lg-4 col-md-6 mb-0">
+    
+                <!-- Panel -->
+                <div class="card">
+    
+                  <div class="card-header white-text primary-color">
+                    Statistics
+                  </div>
+    
+                  <div class="card-body text-center px-4 mb-3">
+                    <div class="list-group list-panel">
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                      <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros
+                        <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top"
+                          title="Click to fix"></i></a>
+                    </div>
+                  </div>
+    
+                </div>
+                <!-- Panel -->
+    
+              </div>
+              <!-- Grid column -->
+    
+            </div>
+            <!-- Grid row -->
+    
+          </section>
+          <!--Section: Cascading panels-->
+    
+          <!-- Section: Classic admin cards -->
+          <section class="pb-3">
+    
+            <!-- Grid row -->
+            <div class="row">
+    
+              <!-- Grid column -->
+              <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+    
+                <!-- Card Primary -->
+                <div class="card classic-admin-card primary-color">
+                  <div class="card-body">
+                    <div class="pull-right">
+                      <i class="far fa-money-bill-alt"></i>
+                    </div>
+                    <p class="white-text">SALES</p>
+                    <h4 class="check">2000$</h4>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar bg grey darken-3" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="card-body">
+                    <p>Better than last week (25%)</p>
+                  </div>
+                </div>
+                <!-- Card Primary -->
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+    
+                <!-- Card Yellow -->
+                <div class="card classic-admin-card warning-color">
+                  <div class="card-body">
+                    <div class="pull-right">
+                      <i class="fas fa-chart-line"></i>
+                    </div>
+                    <p>SUBSCRIPTIONS</p>
+                    <h4 class="check">200</h4>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar bg grey darken-3" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="card-body">
+                    <p>Worse than last week (25%)</p>
+                  </div>
+                </div>
+                <!-- Card Yellow -->
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
+    
+                <!-- Card Blue -->
+                <div class="card classic-admin-card light-blue lighten-1">
+                  <div class="card-body">
+                    <div class="pull-right">
+                      <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <p>TRAFFIC</p>
+                    <h4 class="check">20000</h4>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar bg grey darken-4" role="progressbar" style="width: 75%" aria-valuenow="75"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="card-body">
+                    <p>Better than last week (75%)</p>
+                  </div>
+                </div>
+                <!-- Card Blue -->
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-xl-3 col-md-6 mb-0">
+    
+                <!-- Card Red -->
+                <div class="card classic-admin-card red accent-2">
+                  <div class="card-body">
+                    <div class="pull-right">
+                      <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <p>ORGANIC TRAFFIC</p>
+                    <h4 class="check">2000</h4>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar bg grey darken-4" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="card-body">
+                    <p>Better than last week (25%)</p>
+                  </div>
+                </div>
+                <!-- Card Red -->
+    
+              </div>
+              <!-- Grid column -->
+    
+            </div>
+            <!-- Grid row -->
+    
+          </section>
+          <!-- Section: Classic admin cards -->
+    
         </div>
-        <!-- Grid row -->
-
-      </div>
+      </main>
 
     </div>
+    <!-- Main Container -->
 
-    <!-- Footer Links -->
-    <div class="container mt-5 mb-4 text-center text-md-left">
+    <!-- Footer -->
+    <footer class="page-footer text-center text-md-left stylish-color-dark pt-0">
 
-      <div class="row mt-3">
+      <div style="background-color: #4285f4;">
 
-        <!-- First column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+        <div class="container">
 
-          <h6 class="text-uppercase font-weight-bold">
+          <!-- Grid row -->
+          <div class="row py-4 d-flex align-items-center">
 
-            <strong>Company name</strong>
+            <!-- Grid column -->
+            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
 
-          </h6>
+              <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
 
-          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            </div>
+            <!-- Grid column -->
 
-          <p>OctoPy</p>
+            <!-- Grid column -->
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+              <!-- Facebook -->
+              <a class="fb-ic ml-0 px-2">
+
+                <i class="fab fa-facebook-f white-text"> </i>
+
+              </a>
+
+              <!-- Twitter -->
+              <a class="tw-ic px-2">
+
+                <i class="fab fa-twitter white-text"> </i>
+
+              </a>
+
+              <!-- Google + -->
+              <a class="gplus-ic px-2">
+
+                <i class="fab fa-google-plus-g white-text"> </i>
+
+              </a>
+
+              <!-- Linkedin -->
+              <a class="li-ic px-2">
+
+                <i class="fab fa-linkedin-in white-text"> </i>
+
+              </a>
+
+              <!-- Instagram -->
+              <a class="ins-ic px-2">
+
+                <i class="fab fa-instagram white-text"> </i>
+
+              </a>
+
+            </div>
+            <!-- Grid column -->
+
+          </div>
+          <!-- Grid row -->
 
         </div>
-        <!-- First column -->
 
-        <!-- Second column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+      </div>
 
-          <h6 class="text-uppercase font-weight-bold">
+      <!-- Footer Links -->
+      <div class="container mt-5 mb-4 text-center text-md-left">
 
-            <strong>Products</strong>
+        <div class="row mt-3">
 
-          </h6>
+          <!-- First column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
 
-          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <h6 class="text-uppercase font-weight-bold">
 
-          <p>
+              <strong>Company name</strong>
 
-            <a href="#!">CIT-University</a>
+            </h6>
 
-          </p>
+            <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+            <p>OctoPy</p>
+
+          </div>
+          <!-- First column -->
+
+          <!-- Second column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <h6 class="text-uppercase font-weight-bold">
+
+              <strong>Products</strong>
+
+            </h6>
+
+            <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+            <p>
+
+              <a href="#!">CIT-University</a>
+
+            </p>
 
 
-          <p>
+            <p>
 
-            <a href="#!">Elementary</a>
+              <a href="#!">Elementary</a>
 
-          </p>
+            </p>
 
-          
-          <p>
+            
+            <p>
+
+              
+
+            </p>
 
             
 
-          </p>
+          </div>
+          <!-- Second column -->
 
-          
+          <!-- Third column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <h6 class="text-uppercase font-weight-bold">
+
+              <strong>Useful links</strong>
+
+            </h6>
+
+            <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+            <p>
+
+              <a href="#!">Home</a>
+
+            </p>
+
+            <p>
+
+              <a href="#!">About us</a>
+
+            </p>
+
+            <p>
+
+              <a href="#!">Services</a>
+
+            </p>
+
+            <p>
+
+              <a href="#!">Term of Service</a>
+
+            </p>
+
+            <p>
+
+              <a href="#!">Privacy Policy</a>
+
+            </p>
+
+          </div>
+          <!-- Third column -->
+
+          <!-- Fourth column -->
+          <div class="col-md-4 col-lg-3 col-xl-3">
+
+            <h6 class="text-uppercase font-weight-bold">
+
+              <strong>Contact</strong>
+
+            </h6>
+
+            <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+            <p>
+
+              <i class="fas fa-home mr-3"></i> Natalio B, Bacalso Ave,</p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Cebu City, 6000 Cebu </p>
+
+            <p>
+
+              <i class="fas fa-envelope mr-3"></i>&nbsp octopy.startup@gmail.com</p>
+
+            <p>
+
+              <i class="fas fa-phone mr-3"></i>&nbsp + 639-564-374-542</p>
+
+          </div>
+          <!-- Fourth column -->
 
         </div>
-        <!-- Second column -->
-
-        <!-- Third column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-          <h6 class="text-uppercase font-weight-bold">
-
-            <strong>Useful links</strong>
-
-          </h6>
-
-          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-
-          <p>
-
-            <a href="#!">Home</a>
-
-          </p>
-
-          <p>
-
-            <a href="#!">About us</a>
-
-          </p>
-
-          <p>
-
-            <a href="#!">Services</a>
-
-          </p>
-
-          <p>
-
-            <a href="#!">Term of Service</a>
-
-          </p>
-
-          <p>
-
-            <a href="#!">Privacy Policy</a>
-
-          </p>
-
-        </div>
-        <!-- Third column -->
-
-        <!-- Fourth column -->
-        <div class="col-md-4 col-lg-3 col-xl-3">
-
-          <h6 class="text-uppercase font-weight-bold">
-
-            <strong>Contact</strong>
-
-          </h6>
-
-          <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-
-          <p>
-
-            <i class="fas fa-home mr-3"></i> Natalio B, Bacalso Ave,</p>
-			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Cebu City, 6000 Cebu </p>
-
-          <p>
-
-            <i class="fas fa-envelope mr-3"></i>&nbsp octopy.startup@gmail.com</p>
-
-          <p>
-
-            <i class="fas fa-phone mr-3"></i>&nbsp + 639-564-374-542</p>
-
-        </div>
-        <!-- Fourth column -->
 
       </div>
+      <!-- Footer Links -->
 
-    </div>
-    <!-- Footer Links -->
+      <!-- Copyright -->
+      <div class="footer-copyright py-3 text-center">
 
-    <!-- Copyright -->
-    <div class="footer-copyright py-3 text-center">
+        <div class="container-fluid">
 
-      <div class="container-fluid">
+          © 2019 Copyright: <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
 
-        © 2019 Copyright: <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+        </div>
 
       </div>
+      <!-- Copyright -->
 
-    </div>
-    <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
-  </footer>
-  <!-- Footer -->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{% static 'admin/js/jquery-3.4.1.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static 'admin/js/popper.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'admin/js/bootstrap.min.js' %}">
+    </script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'admin/js/mdb.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/admin.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/addons/datatables.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/addons/datatables-select.min.js' %}"></script>
 
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="{% static 'admin/js/jquery-3.4.1.min.js' %}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{% static 'admin/js/popper.min.js' %}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{% static 'admin/js/bootstrap.min.js' %}">
-  </script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{% static 'admin/js/mdb.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'admin/js/admin.js' %}"></script>
-  <script type="text/javascript" src="{% static 'admin/js/addons/datatables.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'admin/js/addons/datatables-select.min.js' %}"></script>
+    <script type="text/javascript">
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+  // Small chart
+  $(function () {
+    $('.min-chart#chart-sales').easyPieChart({
+      barColor: "#FF5252",
+      onStep: function (from, to, percent) {
+        $(this.el).find('.percent').text(Math.round(percent));
+      }
+    });
+  });
 
-  <script type="text/javascript">
-      // SideNav Initialization
-      $(".button-collapse").sideNav();
-// Small chart
-$(function () {
-  $('.min-chart#chart-sales').easyPieChart({
-    barColor: "#FF5252",
-    onStep: function (from, to, percent) {
-      $(this.el).find('.percent').text(Math.round(percent));
+  var data = "{{peak}}"
+  var jsonfile = JSON.parse(data.replace(/&quot;/g,'"'));;
+  console.log(Object.keys(jsonfile));
+
+  var data2 = "{{months}}"
+  var jsonfile2 = JSON.parse(data2.replace(/&quot;/g,'"'));;
+  console.log(jsonfile2);
+
+  // Main chart
+  var ctxL = document.getElementById("lineChart").getContext('2d');
+  var myLineChart = new Chart(ctxL, {
+    type: 'line',
+    data: {
+      labels: Object.keys(jsonfile),
+      datasets: [{
+        label: "Users Peak Time",
+        fillColor: "#fff",
+        backgroundColor: 'rgba(255, 255, 255, .3)',
+        borderColor: 'rgba(255, 255, 255)',
+        data: Object.values(jsonfile),
+      }]
+    },
+    options: {
+      legend: {
+        labels: {
+          fontColor: "#fff",
+        }
+      },
+      scales: {
+        xAxes: [{
+          gridLines: {
+            display: true,
+            color: "rgba(255,255,255,.25)"
+          },
+          ticks: {
+            fontColor: "#fff",
+          },
+        }],
+        yAxes: [{
+          display: true,
+          gridLines: {
+            display: true,
+            color: "rgba(255,255,255,.25)"
+          },
+          ticks: {
+            fontColor: "#fff",
+          },
+        }],
+      }
     }
   });
-});
 
-var data = "{{peak}}"
-var jsonfile = JSON.parse(data.replace(/&quot;/g,'"'));;
-console.log(Object.keys(jsonfile));
 
-var data2 = "{{months}}"
-var jsonfile2 = JSON.parse(data2.replace(/&quot;/g,'"'));;
-console.log(jsonfile2);
-
-// Main chart
-var ctxL = document.getElementById("lineChart").getContext('2d');
-var myLineChart = new Chart(ctxL, {
-  type: 'line',
-  data: {
-    labels: Object.keys(jsonfile),
-    datasets: [{
-      label: "Users Peak Time",
-      fillColor: "#fff",
-      backgroundColor: 'rgba(255, 255, 255, .3)',
-      borderColor: 'rgba(255, 255, 255)',
-      data: Object.values(jsonfile),
-    }]
-  },
-  options: {
-    legend: {
-      labels: {
-        fontColor: "#fff",
-      }
+  var ctxL2 = document.getElementById("barChart").getContext('2d');
+  var mybarChart2 = new Chart(ctxL2, {
+    type: 'bar',
+    data: {
+      labels: Object.keys(jsonfile2),
+      datasets: [{
+        label: "Monthly Usage",
+        fillColor: "#fff",
+        backgroundColor: 'rgba(255, 255, 255, .3)',
+        borderColor: 'rgba(255, 255, 255)',
+        data: Object.values(jsonfile2),
+      }]
     },
-    scales: {
-      xAxes: [{
-        gridLines: {
-          display: true,
-          color: "rgba(255,255,255,.25)"
-        },
-        ticks: {
+    options: {
+      legend: {
+        labels: {
           fontColor: "#fff",
-        },
-      }],
-      yAxes: [{
-        display: true,
-        gridLines: {
+        }
+      },
+      scales: {
+        xAxes: [{
+          gridLines: {
+            display: true,
+            color: "rgba(255,255,255,.25)"
+          },
+          ticks: {
+            fontColor: "#fff",
+          },
+        }],
+        yAxes: [{
           display: true,
-          color: "rgba(255,255,255,.25)"
-        },
-        ticks: {
-          fontColor: "#fff",
-        },
-      }],
-    }
-  }
-});
-
-
-var ctxL2 = document.getElementById("barChart").getContext('2d');
-var mybarChart2 = new Chart(ctxL2, {
-  type: 'bar',
-  data: {
-    labels: Object.keys(jsonfile2),
-    datasets: [{
-      label: "Monthly Usage",
-      fillColor: "#fff",
-      backgroundColor: 'rgba(255, 255, 255, .3)',
-      borderColor: 'rgba(255, 255, 255)',
-      data: Object.values(jsonfile2),
-    }]
-  },
-  options: {
-    legend: {
-      labels: {
-        fontColor: "#fff",
+          gridLines: {
+            display: true,
+            color: "rgba(255,255,255,.25)"
+          },
+          ticks: {
+            fontColor: "#fff",
+          },
+        }],
       }
-    },
-    scales: {
-      xAxes: [{
-        gridLines: {
-          display: true,
-          color: "rgba(255,255,255,.25)"
-        },
-        ticks: {
-          fontColor: "#fff",
-        },
-      }],
-      yAxes: [{
-        display: true,
-        gridLines: {
-          display: true,
-          color: "rgba(255,255,255,.25)"
-        },
-        ticks: {
-          fontColor: "#fff",
-        },
-      }],
     }
-  }
-});
+  });
 
 
-$.ajaxSetup({
-      beforeSend: function(xhr, settings) {
-        function getCookie(name) {
-          var cookieValue = null;
-          if (document.cookie && document.cookie != '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-              var cookie = jQuery.trim(cookies[i]);
-              // Does this cookie string begin with the name we want?
-              if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
+  $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+          function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+              var cookies = document.cookie.split(';');
+              for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+                }
               }
             }
+            return cookieValue;
           }
-          return cookieValue;
+          if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+            // Only send the token to relative URLs i.e. locally.
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+          }
         }
-        if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
-          // Only send the token to relative URLs i.e. locally.
-          xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
-        }
+      });
+
+    </script>
+
+
+  <script>
+    // SideNav Initialization
+    $(".button-collapse").sideNav();
+
+    let container = document.querySelector('.custom-scrollbar');
+    var ps = new PerfectScrollbar(container, {
+      wheelSpeed: 2,
+      wheelPropagation: true,
+      minScrollbarLength: 20
+    });
+
+    $('#dtMaterialDesignExample').DataTable();
+
+    $('#dt-material-checkbox').dataTable({
+
+      columnDefs: [{
+        orderable: false,
+        className: 'select-checkbox',
+        targets: 0
+      }],
+      select: {
+        style: 'os',
+        selector: 'td:first-child'
       }
     });
 
+    $('#dtMaterialDesignExample_wrapper, #dt-material-checkbox_wrapper').find('label').each(function () {
+      $(this).parent().append($(this).children());
+    });
+    $('#dtMaterialDesignExample_wrapper .dataTables_filter, #dt-material-checkbox_wrapper .dataTables_filter').find(
+      'input').each(function () {
+      $('input').attr("placeholder", "Search");
+      $('input').removeClass('form-control-sm');
+      $("#dtMaterialDesignExample_filter label").remove();
+
+    });
+    $('#dtMaterialDesignExample_wrapper .dataTables_length, #dt-material-checkbox_wrapper .dataTables_length').addClass(
+      'd-flex flex-row');
+    $('#dtMaterialDesignExample_wrapper .dataTables_filter, #dt-material-checkbox_wrapper .dataTables_filter').addClass(
+      'md-form');
+    $('#dtMaterialDesignExample_wrapper select, #dt-material-checkbox_wrapper select').removeClass(
+      'custom-select custom-select-sm form-control form-control-sm');
+    $('#dtMaterialDesignExample_wrapper select, #dt-material-checkbox_wrapper select').addClass('mdb-select');
+    // $('#dtMaterialDesignExample_wrapper .mdb-select, #dt-material-checkbox_wrapper .mdb-select').materialSelect();
+    $('#dtMaterialDesignExample_wrapper .dataTables_filte, #dt-material-checkbox_wrapper .dataTables_filterr').find(
+      'label').remove();
+
   </script>
+  </body>
 
-
-<script>
-  // SideNav Initialization
-  $(".button-collapse").sideNav();
-
-  let container = document.querySelector('.custom-scrollbar');
-  var ps = new PerfectScrollbar(container, {
-    wheelSpeed: 2,
-    wheelPropagation: true,
-    minScrollbarLength: 20
-  });
-
-  $('#dtMaterialDesignExample').DataTable();
-
-  $('#dt-material-checkbox').dataTable({
-
-    columnDefs: [{
-      orderable: false,
-      className: 'select-checkbox',
-      targets: 0
-    }],
-    select: {
-      style: 'os',
-      selector: 'td:first-child'
-    }
-  });
-
-  $('#dtMaterialDesignExample_wrapper, #dt-material-checkbox_wrapper').find('label').each(function () {
-    $(this).parent().append($(this).children());
-  });
-  $('#dtMaterialDesignExample_wrapper .dataTables_filter, #dt-material-checkbox_wrapper .dataTables_filter').find(
-    'input').each(function () {
-    $('input').attr("placeholder", "Search");
-    $('input').removeClass('form-control-sm');
-    $("#dtMaterialDesignExample_filter label").remove();
-
-  });
-  $('#dtMaterialDesignExample_wrapper .dataTables_length, #dt-material-checkbox_wrapper .dataTables_length').addClass(
-    'd-flex flex-row');
-  $('#dtMaterialDesignExample_wrapper .dataTables_filter, #dt-material-checkbox_wrapper .dataTables_filter').addClass(
-    'md-form');
-  $('#dtMaterialDesignExample_wrapper select, #dt-material-checkbox_wrapper select').removeClass(
-    'custom-select custom-select-sm form-control form-control-sm');
-  $('#dtMaterialDesignExample_wrapper select, #dt-material-checkbox_wrapper select').addClass('mdb-select');
-  // $('#dtMaterialDesignExample_wrapper .mdb-select, #dt-material-checkbox_wrapper .mdb-select').materialSelect();
-  $('#dtMaterialDesignExample_wrapper .dataTables_filte, #dt-material-checkbox_wrapper .dataTables_filterr').find(
-    'label').remove();
-
-</script>
-</body>
-
-</html>
+  </html>

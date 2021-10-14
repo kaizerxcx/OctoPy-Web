@@ -104,6 +104,19 @@ class UserView(View):
             Notification.objects.filter(notification_id = notification_id).delete()
             response_data['status'] = 1
             return JsonResponse(response_data)
+        elif 'user-update' in request.POST:
+            updateId = request.POST.get("user-id")
+            updateFirstname = request.POST.get("user-firstname")
+            updateLastname = request.POST.get("user-lastname")
+            updateAge = request.POST.get("user-age")
+            updateUsername = request.POST.get("user-username")           
+            updateUser = User.objects.filter(user_id = updateId).update(firstname = updateFirstname, lastname = updateLastname, age = updateAge, username = updateUsername)
+            print(updateUser)
+            return redirect('user:user_view')
+        elif 'user-delete' in request.POST:
+            deleteId = request.POST.get("user-idDelete")
+            deleteUser = User.objects.filter(user_id= deleteId).delete()            
+            return redirect('user:user_welcome_view')
         else:
             return HttpResponse('<br><h1 style="text-align:center;">Error Request</h1>')
 		

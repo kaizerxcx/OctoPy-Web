@@ -19,6 +19,10 @@ class AdministratorView(View):
     def get(self, request):
         user_id = -1
         access_type = -1
+#       users = User.objects.all()
+#       context = {
+#           'users' : users
+#       }
         if 'user_id' in request.session:
             user_id = request.session['user_id']
         if 'access_type' in request.session:
@@ -35,6 +39,7 @@ class AdministratorView(View):
             months = [x.strftime("%B") for x in DATE]
             df['months'] = months
             months = df['months'].value_counts()
+            userss = User.objects.all()
             context = {
                 'user_id': user_id,
                 'users' : users,
@@ -43,6 +48,7 @@ class AdministratorView(View):
                 'labels': df['lastLogin'].values,
                 'peak': peak.to_json(),
                 'months': months.to_json(),
+                'userss' : userss
             }
             return render(request,"admin/admin.html", context)
         else:
@@ -79,8 +85,21 @@ class AdministratorView(View):
             for user in users:
                 notif_content = user.firstname+" declined your request"
                 admin_id = user.user_ptr_id
-            Notification.objects.create(sender_id = admin_id, receiver = user_id, content = notif_content)
-            response_data['status'] = 1
-            return JsonResponse(response_data)
+                Notification.objects.create(sender_id = admin_id, receiver = user_id, content = notif_content)
+                response_data['status'] = 1
+            return JsonResponse(response_data)      
+        elif 'user-update' in request.POST:
+            updateId = request.POST.get("user-id")
+            updateFirstname = request.POST.get("user-firstname")
+            updateLastname = request.POST.get("user-lastname")
+            updateAge = request.POST.get("user-age")
+            updateUsername = request.POST.get("user-username")          
+            updateUser = User.objects.filter(user_id = updateId).update(firstname = updateFirstname, lastname = updateLastname, age = updateAge, username = updateUsername)
+            print(updateUser)
+            return redirect('administrator:administrator_view')     
+        elif 'user-delete' in request.POST:
+            deleteId = request.POST.get("user-idDelete")
+            deleteUser = User.objects.filter(user_id= deleteId).delete()            
+            return redirect('administrator:administrator_view')         
         else:
             return HttpResponse('<br><h1 style="text-align:center;">Error Request</h1>')
