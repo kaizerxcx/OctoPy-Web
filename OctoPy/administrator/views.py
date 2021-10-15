@@ -19,10 +19,11 @@ class AdministratorView(View):
     def get(self, request):
         user_id = -1
         access_type = -1
+#        feedbacks = Feedback.objects.all()
 #       users = User.objects.all()
-#       context = {
-#           'users' : users
-#       }
+#        context = {
+#            'feedbacks' : feedbacks
+#        }
         if 'user_id' in request.session:
             user_id = request.session['user_id']
         if 'access_type' in request.session:
@@ -40,6 +41,7 @@ class AdministratorView(View):
             df['months'] = months
             months = df['months'].value_counts()
             userss = User.objects.all()
+            feedbacks = Feedback.objects.all()
             context = {
                 'user_id': user_id,
                 'users' : users,
@@ -48,7 +50,8 @@ class AdministratorView(View):
                 'labels': df['lastLogin'].values,
                 'peak': peak.to_json(),
                 'months': months.to_json(),
-                'userss' : userss
+                'userss' : userss,
+                'feedbacks' : feedbacks
             }
             return render(request,"admin/admin.html", context)
         else:
@@ -100,6 +103,10 @@ class AdministratorView(View):
         elif 'user-delete' in request.POST:
             deleteId = request.POST.get("user-idDelete")
             deleteUser = User.objects.filter(user_id= deleteId).delete()            
-            return redirect('administrator:administrator_view')         
+            return redirect('administrator:administrator_view')  
+        elif 'feedback-delete' in request.POST:
+            feedbackId = request.POST.get("feedback-idDelete")
+            feedbackUSer = Feedback.objects.filter(feedback_id = feedbackId).delete()
+            return redirect('administrator:administrator_view')  
         else:
             return HttpResponse('<br><h1 style="text-align:center;">Error Request</h1>')
