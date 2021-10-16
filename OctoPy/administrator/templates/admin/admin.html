@@ -453,135 +453,51 @@
         <div class="container-fluid">
     
           <!-- Section: Intro -->
-          <section class="mt-md-4 pt-md-2 mb-5 pb-4">
+          <section class="mb-5">
     
-            <!-- Grid row -->
-            <div class="row">
+            <!-- Card -->
+            <div class="card card-cascade narrower">
     
-              <!-- Grid column -->
-              <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+              <!-- Section: Chart -->
+              <section>
     
-                <!-- Card -->
-                <div class="card card-cascade cascading-admin-card">
+                <!-- Grid row -->
+                <div class="row justify-content-md-center" >
     
-                  <!-- Card Data -->
-                  <div class="admin-up">
-                    <i class="far fa-money-bill-alt primary-color mr-3 z-depth-2"></i>
-                    <div class="data">
-                      <p class="text-uppercase">sales</p>
-                      <h4 class="font-weight-bold dark-grey-text">2000$</h4>
+              
+    
+                  <!-- Grid column -->
+                  <div class="col-xl-5 col-lg-12 mb-4 pb-2">
+    
+                    <!-- Chart -->
+                    <div class="view view-cascade gradient-card-header blue-gradient">
+    
+                      <canvas id="pie1" height="175"></canvas>
+    
                     </div>
-                  </div>
     
-                  <!-- Card content -->
-                  <div class="card-body card-body-cascade">
-                    <div class="progress mb-3">
-                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">Better than last week (25%)</p>
                   </div>
+                  <!-- Grid column -->
+
+                    
+                  <!-- Grid column -->
+                  <div class="col-xl-5 col-lg-12 mb-4 pb-2">
+    
+                    <!-- Chart -->
+                    <div class="view view-cascade gradient-card-header blue-gradient">
+    
+                      <canvas id="barChart1" height="175"></canvas>
+    
+                    </div>
+    
+                  </div>
+                  <!-- Grid column -->
     
                 </div>
-                <!-- Card -->
+                <!-- Grid row -->
     
-              </div>
-              <!-- Grid column -->
-    
-              <!-- Grid column -->
-              <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-    
-                <!-- Card -->
-                <div class="card card-cascade cascading-admin-card">
-    
-                  <!-- Card Data -->
-                  <div class="admin-up">
-                    <i class="fas fa-chart-line warning-color mr-3 z-depth-2"></i>
-                    <div class="data">
-                      <p class="text-uppercase">subscriptions</p>
-                      <h4 class="font-weight-bold dark-grey-text">200</h4>
-                    </div>
-                  </div>
-    
-                  <!-- Card content -->
-                  <div class="card-body card-body-cascade">
-                    <div class="progress mb-3">
-                      <div class="progress-bar red accent-2" role="progressbar" style="width: 25%" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">Worse than last week (25%)</p>
-                  </div>
-    
-                </div>
-                <!-- Card -->
-    
-              </div>
-              <!-- Grid column -->
-    
-              <!-- Grid column -->
-              <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
-    
-                <!-- Card -->
-                <div class="card card-cascade cascading-admin-card">
-    
-                  <!-- Card Data -->
-                  <div class="admin-up">
-                    <i class="fas fa-chart-pie light-blue lighten-1 mr-3 z-depth-2"></i>
-                    <div class="data">
-                      <p class="text-uppercase">traffic</p>
-                      <h4 class="font-weight-bold dark-grey-text">20000</h4>
-                    </div>
-                  </div>
-    
-                  <!-- Card content -->
-                  <div class="card-body card-body-cascade">
-                    <div class="progress mb-3">
-                      <div class="progress-bar red accent-2" role="progressbar" style="width: 75%" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">Worse than last week (75%)</p>
-                  </div>
-    
-                </div>
-                <!-- Card -->
-    
-              </div>
-              <!-- Grid column -->
-    
-              <!-- Grid column -->
-              <div class="col-xl-3 col-md-6 mb-0">
-    
-                <!-- Card -->
-                <div class="card card-cascade cascading-admin-card">
-    
-                  <!-- Card Data -->
-                  <div class="admin-up">
-                    <i class="fas fa-chart-bar red accent-2 mr-3 z-depth-2"></i>
-                    <div class="data">
-                      <p class="text-uppercase">organic traffic</p>
-                      <h4 class="font-weight-bold dark-grey-text">2000</h4>
-                    </div>
-                  </div>
-    
-                  <!-- Card content -->
-                  <div class="card-body card-body-cascade">
-                    <div class="progress mb-3">
-                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="card-text">Better than last week (25%)</p>
-                  </div>
-    
-                </div>
-                <!-- Card -->
-    
-              </div>
-              <!-- Grid column -->
-    
-            </div>
-            <!-- Grid row -->
-    
-          </section>
+              </section>
+              <!-- Section: Chart -->
           <!-- Section: Intro -->
     
           <!-- Section: Main panel -->
@@ -604,7 +520,7 @@
                     <!-- Chart -->
                     <div class="view view-cascade gradient-card-header blue-gradient">
     
-                      <canvas id="lineChart" height="175"></canvas>
+                      <canvas id="lineChart1" height="175"></canvas>
     
                     </div>
     
@@ -618,7 +534,7 @@
                     <!-- Chart -->
                     <div class="view view-cascade gradient-card-header blue-gradient">
     
-                      <canvas id="barChart" height="175"></canvas>
+                      <canvas id="barChart2" height="175"></canvas>
     
                     </div>
     
@@ -1418,14 +1334,92 @@
 
   var data = "{{peak}}"
   var jsonfile = JSON.parse(data.replace(/&quot;/g,'"'));;
-  console.log(Object.keys(jsonfile));
+  // console.log(Object.keys(jsonfile));
 
   var data2 = "{{months}}"
   var jsonfile2 = JSON.parse(data2.replace(/&quot;/g,'"'));;
-  console.log(jsonfile2);
+  // console.log(jsonfile2);
 
+  var data3 = "{{age}}"
+  var jsonfile3 = JSON.parse(data3.replace(/&quot;/g,'"'));;
+  // console.log(jsonfile3);
+
+  var str = "{{points}}"
+  var jsonfile4 = JSON.parse(str.replace(/&quot;/g,'"'));;
+  console.log(Object.values(jsonfile4[0]));
+
+  var ctxL2 = document.getElementById("pie1").getContext('2d');
+  var mybarChart2 = new Chart(ctxL2, {
+    type: 'pie',
+    data: {
+      labels: Object.keys(jsonfile3),
+      datasets: [{
+        label: "Monthly Usage",
+        fillColor: "#fff",
+        backgroundColor: 'rgba(255, 255, 255, .3)',
+        borderColor: 'rgba(255, 255, 255)',
+        data: Object.values(jsonfile3),
+      }]
+    },
+    options: {
+      legend: {
+        labels: {
+          fontColor: "#fff",
+        },
+        position: 'bottom',
+      },
+      title: {
+        display: true,
+        text: 'User Age',
+        fontColor: "#fff",
+      }
+    },
+  });
+
+  var ctxL2 = document.getElementById("barChart1").getContext('2d');
+  var mybarChart2 = new Chart(ctxL2, {
+    type: 'bar',
+    data: {
+      labels: Object.keys(jsonfile4[0]),
+      datasets: [{
+        label: ["User Overall Score"],
+        fillColor: "#fff",
+        backgroundColor: 'rgba(255, 255, 255, .3)',
+        borderColor: 'rgba(255, 255, 255)',
+        data: Object.values(jsonfile4[0]),
+      }]
+    },
+    options: {
+      legend: {
+        labels: {
+          fontColor: "#fff",
+        }
+      },
+      scales: {
+        xAxes: [{
+          gridLines: {
+            display: true,
+            color: "rgba(255,255,255,.25)"
+          },
+          ticks: {
+            fontColor: "#fff",
+          },
+        }],
+        yAxes: [{
+          display: true,
+          gridLines: {
+            display: true,
+            color: "rgba(255,255,255,.25)"
+          },
+          ticks: {
+            fontColor: "#fff",
+          },
+        }],
+      }
+    }
+  });
   // Main chart
-  var ctxL = document.getElementById("lineChart").getContext('2d');
+  var ctxL = document.getElementById("lineChart1").getContext('2d');
   var myLineChart = new Chart(ctxL, {
     type: 'line',
     data: {
@@ -1469,7 +1463,7 @@
   });
 
 
-  var ctxL2 = document.getElementById("barChart").getContext('2d');
+  var ctxL2 = document.getElementById("barChart2").getContext('2d');
   var mybarChart2 = new Chart(ctxL2, {
     type: 'bar',
     data: {

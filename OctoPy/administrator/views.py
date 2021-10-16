@@ -41,6 +41,13 @@ class AdministratorView(View):
             df['months'] = months
             months = df['months'].value_counts()
             userss = User.objects.all()
+            user_values = User.objects.all().values()
+            df2 = pd.DataFrame(user_values)
+            age = df2['age'].value_counts()
+            points_value = Points.objects.all().values()
+            df3 = pd.DataFrame(points_value)
+            df4 = pd.DataFrame([[df3["crazeOnPhonicPoints"].sum(),df3["wordKitPoints"].sum(),df3["alphaHopperPoints"].sum(), df3["mazeCrazePoints"].sum(), df3["readingSpreePoints"].sum() ]], columns = ["Craze on Phonics", "WordKit", "Alpha Hopper", "Maze Craze", "Reading Spree"])
+
             feedbacks = Feedback.objects.all()
             context = {
                 'user_id': user_id,
@@ -50,6 +57,8 @@ class AdministratorView(View):
                 'labels': df['lastLogin'].values,
                 'peak': peak.to_json(),
                 'months': months.to_json(),
+                'age': age.to_json(),
+                'points':df4.to_json(orient='records'),
                 'userss' : userss,
                 'feedbacks' : feedbacks
             }
@@ -79,6 +88,7 @@ class AdministratorView(View):
                 notif_content = user.firstname+" approved your request"
                 admin_id = user.user_ptr_id
             Notification.objects.create(sender_id = admin_id, receiver = user_id, content = notif_content)
+            return redirect('administrator:administrator_view')  
         elif request.POST.get('action') == 'requestRejected':
             admin_id = request.POST.get("admin_id")
             users = Child.objects.filter(user_ptr_id = admin_id)
@@ -90,7 +100,7 @@ class AdministratorView(View):
                 admin_id = user.user_ptr_id
                 Notification.objects.create(sender_id = admin_id, receiver = user_id, content = notif_content)
                 response_data['status'] = 1
-            return JsonResponse(response_data)      
+            return redirect('administrator:administrator_view')        
         elif 'user-update' in request.POST:
             updateId = request.POST.get("user-id")
             updateFirstname = request.POST.get("user-firstname")
