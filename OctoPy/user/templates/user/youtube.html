@@ -27,47 +27,7 @@
 	<script type="text/javascript" src="{% static 'user/js/jquery-3.1.1.min.js' %}"></script>
 
 	<style>
-		/*ChatBot*/
-		.chat_icon {
-			position: fixed;
-			bottom: 0;
-			right: 30px;
-			z-index: 1000;
-			padding: 0;
-			font-size: 80px;
-			color: #fff;
-			cursor: pointer;
-		}
-
-		.chat_box {
-			width: 400px;
-			height: 80vh;
-			position: fixed;
-			bottom: 100px;
-			right: 30px;
-			background: #dedede;
-			z-index: 1000;
-			transition: all 0.3s ease-out;
-			transform: scaleY(0);
-		}
-
-		.chat_box.active {
-			transform: scaleY(1);
-		}
-
-		#messages {
-			padding: 20px;
-		}
-
-		.my-conv-form-wrapper textarea {
-			height: 30px;
-			overflow: hidden;
-			resize: none;
-		}
-
-		.hidden {
-			display: none !important;
-		}
+		
 	</style>
 
 </head>
@@ -434,51 +394,7 @@
 			</div>
 
 		</div>
-		<!-- ChatBot -->
-		<div class="chat_icon">
-			<i class="fa fa-comments" aria-hidden="true"></i>
-		</div>
-
-		<div class="chat_box">
-			<div class="conv-form-wrapper">
-				<form action="" method="GET" class="hidden">
-
-					<select data-conv-question="Hello! How can I help you" name="category">
-						<option value="WebDevelopment">Website Development ?</option>
-						<option value="DigitalMarketing">Digital Marketing ?</option>
-					</select>
-
-					<div data-conv-fork="category">
-						<div data-conv-case="WebDevelopment">
-							<input type="text" name="domainName" data-conv-question="Please, tell me your domain name">
-						</div>
-						<div data-conv-case="DigitalMarketing" data-conv-fork="first-question2">
-							<input type="text" name="companyName" data-conv-question="Please, enter your company name">
-						</div>
-					</div>
-
-					<input type="text" name="name" data-conv-question="Please, Enter your name">
-
-					<input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you." data-no-answer="true">
-
-					<input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
-
-					<select data-conv-question="Please Confirm">
-						<option value="Yes">Confirm</option>
-					</select>
-
-				</form>
-			</div>
-		</div>
-
-
-		<!-- ChatBot End -->
-
-
-
-
-
-
+	
 
 
 		<!-- Footer Links -->
