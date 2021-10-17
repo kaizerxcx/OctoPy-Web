@@ -19,8 +19,53 @@
   <link href="{% static 'user/css/mdb.min.css' %}" rel="stylesheet">
   <script src="{% static 'user/js/jquery-3.4.1.min.js' %}"></script>
   <script src="{% static 'user/js/jquery.timeago.js' %}"></script>
+
+  <link href="{% static 'user/css/jquery.convform.css' %}" rel="stylesheet">
   
- 
+   <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="48f73a40-1571-4180-8b83-9e9a13441f22";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script> -->
+  <!-- ChatBot -->
+  <!-- <script type="text/javascript" src="{% static 'user/js/jquery-3.1.1.min.js' %}"></script>
+  <link href="{% static 'user/css/jquery.convform.css' %}" rel="stylesheet"> -->
+  
+  <style>
+    /*ChatBot*/
+    .chat_icon{
+      position: fixed;
+      bottom: 0;
+      right: 30px;
+      z-index: 1000;
+      padding: 0;
+      font-size: 80px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .chat_box{
+      width: 400px;
+      height: 80vh;
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background:#dedede;
+      z-index: 1000;
+      transition: all 0.3s ease-out;
+      transform: scaleY(0);
+    }
+    .chat_box.active{
+      transform: scaleY(1);
+    }
+    #messages{
+      padding: 20px;
+    }
+    .my-conv-form-wrapper textarea{
+      height: 30px;
+      overflow: hidden;
+      resize: none;
+    }
+    .hidden{
+      display: none !important;
+    }
+
+  </style>
 
 </head>
 
@@ -293,8 +338,8 @@
                   {% csrf_token %}
                 <a class="dropdown-item">Logout</a>
                 </form>
-                <a class="dropdown-item" href="#" data-toggle="modal" href="#" data-target="#update_user-{{user.user_id}}">My Account</a>
-                <a class="dropdown-item" href="#" data-toggle="modal" href="#" data-target="#delete_user-{{user.user_id}}">Delete My Account</a> </div>
+                <a class="dropdown-item" href="#">My account</a>
+              </div>
             </li>
   
 
@@ -379,87 +424,6 @@
   </div>
   <!-- Main Container -->
 
-{% for user in users %}
-   <!--Update User Information Modal-->
-   <div class="modal fade" id="update_user-{{users.user_id}}" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-    <div class="modal-content" >
-      <div class="modal-header white-text primary-color">
-      <h4 class="modal-title" id="viewModalLabel">
-        <strong>USER INFORMATION</strong></h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      </div>
-      <form id="updateForm" method="post">
-      {% csrf_token %}
-      <div class="modal-body">
-        <input type="text" name="user-id" value="{{user.user_id}}" hidden>
-        <div class="row">
-        &nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
-          <p><strong>First Name</strong></p><input type="text" class="form-control" placeholder="First Name" id="user_firstname" name="user-firstname" value="{{user.firstname}}" required minlength="1" maxlength="30">
-        </div>
-        &nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
-          <p><strong>Last Name</strong></p><input type="text" class="form-control" placeholder="Last Name" id="user_lastname" name="user-lastname" value="{{user.lastname}}" required minlength="1" maxlength="50">
-        </div>
-        </div>
-        <br>
-        <div class="row">
-        &nbsp&nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
-          <p><strong>Age</strong></p><input type="number" style ="width:220px;"  class="form-control" placeholder="Age" id="user_age" name="user-age" value="{{user.age}}" min="6" max="8">
-        </div>
-        &nbsp&nbsp&nbsp&nbsp<div class="col-xs-3">
-          <p><strong>Username</strong></p><input type="text" class="form-control" placeholder="Username" id="user_username" name="user-username" value="{{user.username}}" required minlength="1" maxlength="50" readonly>               
-        </div>
-        </div>
-        <div class="row">
-        &nbsp&nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
-          <p><br><strong>Change Password</strong></p><input type="password" style ="width:220px;"  class="form-control" placeholder="Update Password" id="user_password" name="user-password" value="{{user.password}}" min="6" max="8">
-        </div>
-        </div>
-        <br>
-        <div class="modal-footer" class="modal-header white-text warning-color">
-        <button type="submit" id="user_update" name="user-update" class="btn btn-danger">UPDATE</button>
-        </div>
-      </div>
-      </form>
-    </div>
-    </div>
-  </div>
-  <!--End Update User Information Modal-->
-  {% endfor %}
-
-  {% for user in users %}
-  <!-- Delete User Information Modal -->
- <div class="modal fade" id="delete_user-{{users.user_id}}" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-    <div class="modal-content" >
-      <div class="modal-header white-text primary-color">
-      <h4 class="modal-title" id="viewModalLabel">
-        <strong>DELETE ACCOUNT</strong></h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      </div>
-      <form id="updateForm" method="post">
-      {% csrf_token %}
-        <div class="modal-body">
-        <form id="deleteForm" method="post">
-          {% csrf_token %}
-          <input type="text" name="user-idDelete" value={{user.user_id}} hidden>
-          <p>Are you sure you want to delete this record?</p>
-          <div class="modal-footer">
-          <button type="button" class="btn btn-warning" data-dismiss="modal">NO</button>
-          <button type="submit" id="user_delete" name="user-delete" class="btn btn-danger">YES</button>
-          </div>
-        </form>
-      </form>
-    </div>
-    </div>
-  </div>
-  <!-- End Delete User Information Modal -->
-  {% endfor %}
-
   <!-- Footer -->
   <footer class="page-footer text-center text-md-left stylish-color-dark pt-0">
 
@@ -523,7 +487,45 @@
       </div>
 
     </div>
-   
+    <!-- ChatBot
+    <div class="chat_icon">
+      <i class="fa fa-comments" aria-hidden="true"></i>
+    </div>
+    
+    <div class="chat_box">
+      <div class="conv-form-wrapper">
+        <form action="" method="GET" class="hidden">
+    
+          <select data-conv-question="Hello! How can I help you" name="category">
+            <option value="WebDevelopment">Website Development ?</option>
+            <option value="DigitalMarketing">Digital Marketing ?</option>
+          </select>
+    
+          <div data-conv-fork="category">
+            <div data-conv-case="WebDevelopment">
+              <input type="text" name="domainName" data-conv-question="Please, tell me your domain name">    
+            </div>
+            <div data-conv-case="DigitalMarketing" data-conv-fork="first-question2">
+              <input type="text" name="companyName" data-conv-question="Please, enter your company name"> 
+            </div>
+          </div>
+    
+          <input type="text" name="name" data-conv-question="Please, Enter your name">
+    
+          <input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you." data-no-answer="true">
+    
+          <input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+    
+          <select data-conv-question="Please Confirm">
+            <option value="Yes">Confirm</option>
+          </select>
+    
+        </form>
+      </div>
+    </div>
+ -->
+
+    <!-- ChatBot End -->
 
 
 
@@ -670,7 +672,9 @@
 
   <!-- SCRIPTS -->
 
-
+  <!-- ChatBot -->
+  <script type="text/javascript" src="{% static 'user/js/custom.js' %}"></script>
+  
 
   <!-- JQuery -->
   <script type="text/javascript" src="{% static 'user/js/jquery-3.4.1.min.js' %}"></script>
@@ -683,7 +687,10 @@
   <script type="text/javascript" src="{% static 'user/js/mdb.min.js' %}"></script>
 
   <script type="text/javascript" src="{% static 'user/js/user.js' %}"></script>
+  <script type="text/javascript" src="{% static 'user/js/jquery.convform.js' %}"></script>
+  
   <script type="text/javascript">
+  
       // SideNav Initialization
       $(".button-collapse").sideNav();
       $.ajaxSetup({
