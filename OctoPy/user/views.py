@@ -34,6 +34,7 @@ class UserWelcomeView(View):
             response_data['password'] = password
             now = datetime.now()
             user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, password = password)
+            Points.objects.create(child_id_id = user.child_id)
             # user.save()
             return JsonResponse(response_data)
         elif request.POST.get('action') == 'loginUser':
