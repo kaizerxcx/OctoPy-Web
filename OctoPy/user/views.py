@@ -122,8 +122,9 @@ class UserView(View):
             updateFirstname = request.POST.get("user-firstname")
             updateLastname = request.POST.get("user-lastname")
             updateAge = request.POST.get("user-age")
-            updateUsername = request.POST.get("user-username")           
-            updateUser = User.objects.filter(user_id = updateId).update(firstname = updateFirstname, lastname = updateLastname, age = updateAge, username = updateUsername)
+            # updateUsername = request.POST.get("user-username")
+            updatePassword = request.POST.get("user-password")           
+            updateUser = User.objects.filter(user_id = updateId).update(firstname = updateFirstname, lastname = updateLastname, age = updateAge, password = updatePassword)
             print(updateUser)
             return redirect('user:user_view')
         elif 'user-delete' in request.POST:
