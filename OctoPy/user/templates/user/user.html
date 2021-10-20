@@ -618,11 +618,13 @@
           <p><strong>Username</strong></p><input type="text" class="form-control" placeholder="Username" id="user_username" name="user-username" value="{{user.username}}" required minlength="1" maxlength="50" readonly>               
         </div>
         </div>
+<!--
         <div class="row">
         &nbsp&nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
           <p><br><strong>Change Password</strong></p><input type="password" style ="width:220px;"  class="form-control" placeholder="Update Password" id="user_password" name="user-password" value="{{user.password}}">
         </div>
         </div>
+-->
         <br>
         <div class="modal-footer" class="modal-header white-text warning-color">
         <button type="submit" id="user_update" name="user-update" class="btn btn-danger">UPDATE</button>
@@ -668,10 +670,6 @@
 
   <!-- SCRIPTS -->
 
-  <!-- ChatBot -->
-  <script type="text/javascript" src="{% static 'user/js/custom.js' %}"></script>
-  
-
   <!-- JQuery -->
   <script type="text/javascript" src="{% static 'user/js/jquery-3.4.1.min.js' %}"></script>
   <!-- Bootstrap tooltips -->
@@ -683,7 +681,6 @@
   <script type="text/javascript" src="{% static 'user/js/mdb.min.js' %}"></script>
 
   <script type="text/javascript" src="{% static 'user/js/user.js' %}"></script>
-  <script type="text/javascript" src="{% static 'user/js/jquery.convform.js' %}"></script>
   
   <script type="text/javascript">
   
