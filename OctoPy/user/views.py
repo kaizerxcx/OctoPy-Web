@@ -138,4 +138,10 @@ class YoutubeView(View):
 	def get(self, request):
 		return render(request,'user/youtube.html')
 	def post(self, request):
-		return render(request,'user/youtube.html')
+		response_data = {}
+		if request.POST.get('action') == 'logout':
+			del request.session['user_id']
+			del request.session['access_type']
+			response_data['status'] = 1
+			return JsonResponse(response_data)
+
