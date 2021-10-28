@@ -1,6 +1,7 @@
 // A $( document ).ready() block.
 $( document ).ready(function() {
    
+
     $("#registerSpinner").hide();
 
     $('#registeredSuccessAlert').hide();

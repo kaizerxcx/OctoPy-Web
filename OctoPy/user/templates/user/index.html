@@ -39,6 +39,7 @@
     <!-- Animations -->
     <link rel="stylesheet" href="{% static 'user/css/modules/animations-extended.min.css' %}">
     <link href="{% static 'user/assets/css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'user/js/validation.js' %}"></script>
 
     <!-- =======================================================
   * Template Name: Bootslander - v4.3.0
@@ -201,13 +202,13 @@
                                         <div class="col">
                                             <div class="md-form form-sm">
                                                 <i class="fas fa-user-alt prefix"></i>
-                                                <input type="text" required class="form-control form-control-sm" id="firstname">
+                                                <input type="text" required class="form-control form-control-sm" id="firstname" maxlength="100"  onkeypress="letterOnly(event)">
                                                 <label for="form2">Firstname</label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="md-form form-sm">
-                                                <input type="text" class="form-control form-control-sm" id="lastname" required>
+                                                <input type="text" class="form-control form-control-sm" id="lastname" maxlength="100"  onkeypress="letterOnly(event)" required>
                                                 <label for="form2">Lastname</label>
                                             </div>
                                         </div>
@@ -221,7 +222,7 @@
 
                                     <div class="md-form form-sm">
                                         <i class="fas fa-user-circle prefix"></i>
-                                        <input type="text" class="form-control form-control-sm" id="username" required>
+                                        <input type="text" class="form-control form-control-sm" id="username" maxlength="100" required>
                                         <label for="form2">Username</label>
                                     </div>
 

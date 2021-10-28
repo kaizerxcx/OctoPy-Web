@@ -3,7 +3,6 @@ from django.views.generic import View, TemplateView
 from django.shortcuts import render, redirect
 from django.http import JsonResponse, response
 from django.http import HttpResponse
-from .models import *
 from administrator.models import Administrator
 import hashlib
 from .forms import FeedbackForm
