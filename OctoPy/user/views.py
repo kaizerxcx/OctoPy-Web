@@ -121,8 +121,11 @@ class UserView(View):
             updateFirstname = request.POST.get("user-firstname")
             updateLastname = request.POST.get("user-lastname")
             updateAge = request.POST.get("user-age")
-            updateUsername = request.POST.get("user-username")           
-            updateUser = User.objects.filter(user_id = updateId).update(firstname = updateFirstname, lastname = updateLastname, age = updateAge, username = updateUsername)
+            updatePassword = request.POST.get("user-password")
+            md5pass = hashlib.md5(updatePassword.encode())
+            password = md5pass.hexdigest()           
+            # updateUsername = request.POST.get("user-username")       
+            updateUser = User.objects.filter(user_id = updateId).update(firstname = updateFirstname, lastname = updateLastname, age = updateAge, password = password)
             print(updateUser)
             return redirect('user:user_view')
         elif 'user-delete' in request.POST:
@@ -136,4 +139,10 @@ class YoutubeView(View):
 	def get(self, request):
 		return render(request,'user/youtube.html')
 	def post(self, request):
-		return render(request,'user/youtube.html')
+		response_data = {}
+		if request.POST.get('action') == 'logout':
+			del request.session['user_id']
+			del request.session['access_type']
+			response_data['status'] = 1
+			return JsonResponse(response_data)
+
