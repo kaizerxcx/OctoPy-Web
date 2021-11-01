@@ -842,7 +842,7 @@
                 </table>
               </div>
             </div>
-
+             
           </div>
           <!--End User Feedback column -->
           
@@ -857,7 +857,6 @@
     
           <!-- Section: Cascading panels -->
           <section class="mb-5">
-    
             <!-- Grid row -->
             <div class="row">
     
@@ -1354,6 +1353,12 @@
   var str = "{{points}}"
   var jsonfile4 = JSON.parse(str.replace(/&quot;/g,'"'));;
   console.log(Object.values(jsonfile4[0]));
+
+
+
+  var data4 = "{{df5}}"
+  var jsonfile5 = JSON.parse(data4.replace(/&quot;/g,'"'));;
+  console.log(jsonfile5);
 
   var ctxL2 = document.getElementById("pie1").getContext('2d');
   var mybarChart2 = new Chart(ctxL2, {

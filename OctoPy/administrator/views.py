@@ -47,8 +47,14 @@ class AdministratorView(View):
             points_value = Points.objects.all().values()
             df3 = pd.DataFrame(points_value)
             df4 = pd.DataFrame([[df3["crazeOnPhonicPoints"].sum(),df3["wordKitPoints"].sum(),df3["alphaHopperPoints"].sum(), df3["mazeCrazePoints"].sum(), df3["readingSpreePoints"].sum() ]], columns = ["Craze on Phonics", "WordKit", "Alpha Hopper", "Maze Craze", "Reading Spree"])
-
             feedbacks = Feedback.objects.all()
+            user_point = User.objects.raw("SELECT * FROM user JOIN points on user.user_id = points.child_id_id")
+            leaderboard = pd.DataFrame([item.__dict__ for item in user_point])
+            leaderboard['Total'] = leaderboard['crazeOnPhonicPoints'] + leaderboard['wordKitPoints'] + leaderboard['alphaHopperPoints'] + leaderboard['mazeCrazePoints'] + leaderboard['readingSpreePoints']
+            leaderboard.drop(['_state', 'password'], axis=1, inplace=True)
+            leaderboard['Rank'] = leaderboard['Total'].rank(ascending=False)
+            leaderboard = leaderboard.sort_values('Rank')
+            leaderboard = leaderboard[:5]
             context = {
                 'user_id': user_id,
                 'users' : users,
@@ -60,7 +66,8 @@ class AdministratorView(View):
                 'age': age.to_json(),
                 'points':df4.to_json(orient='records'),
                 'userss' : userss,
-                'feedbacks' : feedbacks
+                'feedbacks' : feedbacks,
+                'df5': leaderboard.to_json(orient='records'),
             }
             return render(request,"admin/admin.html", context)
         else:

@@ -7,6 +7,9 @@ from .serializers import UserSerializer
 import hashlib
 from django.core import serializers
 from django.http import HttpResponse
+import pandas as pd
+import numpy as np
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -61,3 +64,16 @@ def updateUser(request, user_id, firstname, lastname, age, username, password):
 def deleteUser(request, user_id):
     update = User.objects.filter(user_id = user_id).delete()
     return Response("deleted")
+
+
+@api_view(['GET'])
+def getLeaderboard(request):
+     user_point = User.objects.raw("SELECT * FROM user JOIN points on user.user_id = points.child_id_id")
+     leaderboard = pd.DataFrame([item.__dict__ for item in user_point])
+     leaderboard['total'] = leaderboard['crazeOnPhonicPoints'] + leaderboard['wordKitPoints'] + leaderboard['alphaHopperPoints'] + leaderboard['mazeCrazePoints'] + leaderboard['readingSpreePoints']
+     leaderboard.drop(['_state', 'password'], axis=1, inplace=True)
+     leaderboard['position'] = leaderboard['total'].rank(ascending=False)
+     leaderboard = leaderboard.sort_values('position')
+     leaderboard = leaderboard[:5]
+     return JsonResponse(leaderboard.to_json(orient='records'), safe=False)
+     
