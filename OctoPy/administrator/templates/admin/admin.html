@@ -653,6 +653,39 @@
 
           </div>
           
+            <!-- Gird column -->
+          <div class="col-md-12  shadow-5">
+
+            <div class="card">
+                        <!-- Card image -->
+
+            <!-- /Card image -->
+              <div class="card-body">
+                <table id="userLeaderboard" class="table table-striped" cellspacing="0" width="100%">
+                  <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+                    <br>
+                    <a href="" class="white-text mx-3">Leaderboard</a>
+                    <br>
+                  </div>
+                  <thead align="center">
+                    <tr>
+                      <th>Rank
+                      </th>
+                      <th>Name
+                      </th>
+                      <th>Username
+                      </th>
+                      <th>Total
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody align="center">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
          <!-- Update and Delete User column -->
           <div class="col-md-12  shadow-5">
 
@@ -1359,7 +1392,7 @@
   var data4 = "{{df5}}"
   var jsonfile5 = JSON.parse(data4.replace(/&quot;/g,'"'));;
   console.log(jsonfile5);
-
+ 
   var ctxL2 = document.getElementById("pie1").getContext('2d');
   var mybarChart2 = new Chart(ctxL2, {
     type: 'pie',
@@ -1593,6 +1626,51 @@
     $('#dtMaterialDesignExample_wrapper .dataTables_filte, #dt-material-checkbox_wrapper .dataTables_filterr').find(
       'label').remove();
 
+
+  var userLeaderboard = $('#userLeaderboard').DataTable();
+
+    $('#dt-material-checkbox').dataTable({
+
+      columnDefs: [{
+        orderable: false,
+        className: 'select-checkbox',
+        targets: 0
+      }],
+      select: {
+        style: 'os',
+        selector: 'td:first-child'
+      }
+    });
+
+    $('#userLeaderboard_wrapper, #dt-material-checkbox_wrapper').find('label').each(function () {
+      $(this).parent().append($(this).children());
+    });
+    $('#userLeaderboard_wrapper .dataTables_filter, #dt-material-checkbox_wrapper .dataTables_filter').find(
+      'input').each(function () {
+      $('input').attr("placeholder", "Search");
+      $('input').removeClass('form-control-sm');
+      $("userLeaderboarde_filter label").remove();
+
+    });
+    $('#userLeaderboard_wrapper .dataTables_length, #dt-material-checkbox_wrapper .dataTables_length').addClass(
+      'd-flex flex-row');
+    $('#userLeaderboard_wrapper .dataTables_filter, #dt-material-checkbox_wrapper .dataTables_filter').addClass(
+      'md-form');
+    $('#userLeaderboard_wrapper select, #dt-material-checkbox_wrapper select').removeClass(
+      'custom-select custom-select-sm form-control form-control-sm');
+    $('#userLeaderboard_wrapper select, #dt-material-checkbox_wrapper select').addClass('mdb-select');
+    // $('#dtMaterialDesignExample_wrapper .mdb-select, #dt-material-checkbox_wrapper .mdb-select').materialSelect();
+    $('#userLeaderboard_wrapper .dataTables_filte, #dt-material-checkbox_wrapper .dataTables_filterr').find(
+      'label').remove();
+
+    jsonfile5.forEach(element => {
+      userLeaderboard.row.add([
+        element.Rank,
+        element.firstname + ', ' +element.lastname,
+        element.username,
+        element.Total,
+      ]).draw();
+  });
   </script>
   </body>
 
