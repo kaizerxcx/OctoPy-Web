@@ -76,4 +76,16 @@ def getLeaderboard(request):
      leaderboard = leaderboard.sort_values('position')
      leaderboard = leaderboard[:5]
      return JsonResponse(leaderboard.to_json(orient='records'), safe=False)
+
+
+@api_view(['POST'])
+def getReward(request, pk):
+     user_point = Points.objects.all().values()
+     reward = pd.DataFrame(user_point)
+     reward['total'] =  reward['crazeOnPhonicPoints'] +  reward['wordKitPoints'] +  reward['alphaHopperPoints'] +  reward['mazeCrazePoints'] +  reward['readingSpreePoints']
+     reward['position'] =  reward['total'].rank(ascending=False)
+     reward  = reward.loc[reward['child_id_id'] == int(pk)]
+     return JsonResponse(reward.to_json(orient='records'), safe=False)
+    #  return Response(str(pk))
+
      

@@ -9,5 +9,6 @@ urlpatterns = [
 	path('updateUser/<str:user_id>/<str:firstname>/<str:lastname>/<str:age>/<str:username>/<str:password>/', views.updateUser, name="update-user"),
 	path('deleteUser/<str:user_id>/', views.deleteUser, name="delete-user"),
 	path('getLeaderboard/', views.getLeaderboard, name="users-leaderboard"),
+	path('getReward/<str:pk>/', views.getReward, name="users-reward"),
 ]
 
