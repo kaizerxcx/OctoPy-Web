@@ -23,6 +23,7 @@ class UserWelcomeView(View):
             age = request.POST.get("age")
             username = request.POST.get("username")
             password = request.POST.get("password")
+            email = request.POST.get("email")
             md5pass = hashlib.md5(password.encode())
             password = md5pass.hexdigest()
             response_data['result'] = 'Create post successful!'
@@ -32,10 +33,28 @@ class UserWelcomeView(View):
             response_data['username'] = username
             response_data['password'] = password
             now = datetime.now()
-            user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, password = password)
+            user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, email = email, password = password)
             Points.objects.create(child_id_id = user.child_id)
             # user.save()
             return JsonResponse(response_data)
+        elif request.POST.get('action') == 'checkUsername':
+            user = request.POST.get("username")
+            response_data['status'] = 1
+            try:
+                test = User.objects.get(username=user)
+            except User.DoesNotExist:
+                response_data['status'] = 0
+            return JsonResponse(response_data)
+
+        elif request.POST.get('action') == 'checkEmail':
+            email = request.POST.get("email")
+            response_data['status'] = 1
+            try:
+                test = User.objects.get(email=email)
+            except User.DoesNotExist:
+                response_data['status'] = 0
+            return JsonResponse(response_data)
+
         elif request.POST.get('action') == 'loginUser':
             username = request.POST.get('username')
             password = request.POST.get("password")
@@ -66,6 +85,7 @@ class UserWelcomeView(View):
             form = Feedback.objects.create(name = name, email = email, subject = subject, feedback = feedback)
             form.save()
             return redirect('user:user_welcome_view')
+
         else:
             return render(request, 'user/index.html')
 class UserView(View):

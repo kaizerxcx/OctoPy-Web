@@ -11,6 +11,7 @@ class User(models.Model):
     lastname = models.CharField(max_length=100)
     age = models.IntegerField(default=6)
     username = models.CharField(max_length=100)
+    email = models.CharField(max_length=100, default="NA")
     password = models.CharField(max_length=100)
     date_registered = models.DateField(auto_now=True)
     class Meta:

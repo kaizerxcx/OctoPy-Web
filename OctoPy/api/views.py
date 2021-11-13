@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from .serializers import UserSerializer
 import hashlib
 from django.core import serializers
-from django.http import HttpResponse
+from django.http import HttpResponse, response
 import pandas as pd
 import numpy as np
 from django.http import JsonResponse
@@ -40,10 +40,10 @@ def verifyUser(request, username, password):
     return Response(user_id)
 
 @api_view(['POST'])
-def registerUser(request, firstname, lastname, age, username, password):
+def registerUser(request, firstname, lastname, age, username, email, password):
     md5pass = hashlib.md5(password.encode())
     password = md5pass.hexdigest()
-    user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, password = password)
+    user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, email = email, password = password)
     Points.objects.create(child_id_id = user.child_id)
     return Response("ok")
 
@@ -88,4 +88,21 @@ def getReward(request, pk):
      return JsonResponse(reward.to_json(orient='records'), safe=False)
     #  return Response(str(pk))
 
+@api_view(['POST'])
+def checkUsername(request, username):
+     response_data  = 1
+     try:
+        test = User.objects.get(username=username)
+     except User.DoesNotExist:
+         response_data = 0
+     return Response(response_data)
+
+@api_view(['POST'])
+def checkEmail(request, email):
+     response_data  = 1
+     try:
+        test = User.objects.get(email=email)
+     except User.DoesNotExist:
+         response_data = 0
+     return Response(response_data)
      

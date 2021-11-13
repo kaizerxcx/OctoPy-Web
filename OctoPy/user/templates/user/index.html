@@ -222,14 +222,32 @@
 
                                     <div class="md-form form-sm">
                                         <i class="fas fa-user-circle prefix"></i>
-                                        <input type="text" class="form-control form-control-sm" id="username" maxlength="100" required>
-                                        <label for="form2">Username</label>
+                                        <input type="text" class="form-control form-control-sm " id="username" maxlength="100" required>
+                                        <label for="usernameLabel">Username</label>
+                                        <div id="usernameLabel" class="invalid-feedback">
+                                            Username is taken
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="md-form form-sm">
+                                        <i class="fas fa-envelope prefix"></i>
+                                        <input type="text" class="form-control form-control-sm " id="email" maxlength="100" required>
+                                        <label for="emailLabel">Email Address</label>
+                                        <!-- <div id="emailLabel" class="invalid-feedback">
+                                            Email Address is already taken
+                                        </div> -->
+                                        <div id="emailLabel" class="invalid-feedback">
+                                            Email Address is Already Taken
+                                        </div>
                                     </div>
 
                                     <div class="md-form form-sm">
                                         <i class="fas fa-lock prefix"></i>
-                                        <input type="password" class="form-control form-control-sm" id="password" required>
-                                        <label for="form3">Password</label>
+                                        <input type="password" class="form-control form-control-sm " id="password" required>
+                                        <label for="passwordLabel">Password</label>
+                                        <div id="passwordLabel" class="invalid-feedback">
+                                            Password must have Minimum 8 characters, at least 1 letter and 1 number
+                                        </div>
                                     </div>
 
                                     <div class="text-center form-sm mt-2">
