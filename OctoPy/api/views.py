@@ -10,7 +10,6 @@ from django.http import HttpResponse, response
 import pandas as pd
 import numpy as np
 from django.http import JsonResponse
-
 # Create your views here.
 
 @api_view(['GET'])
@@ -48,14 +47,14 @@ def registerUser(request, firstname, lastname, age, username, email, password):
     return Response("ok")
 
 @api_view(['POST'])
-def updateUser(request, user_id, firstname, lastname, age, username, password):
+def updateUser(request, user_id, firstname, lastname, age, username, email, password):
     str = password
     md5pass = hashlib.md5(password.encode())
     password = md5pass.hexdigest()
     if str:
-        update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, password = password)
+        update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, email = email, password = password)
     else:
-        update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username)
+        update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, email = email)
     user = User.objects.filter(user_id= user_id)
     serializer = UserSerializer(user, many=True)
     return Response(serializer.data)
@@ -105,4 +104,18 @@ def checkEmail(request, email):
      except User.DoesNotExist:
          response_data = 0
      return Response(response_data)
-     
+
+
+@api_view(['POST'])
+def getPercentile(request, pk):
+     user_point = User.objects.raw("SELECT * FROM user JOIN points on user.user_id = points.child_id_id")
+     percentile_score = pd.DataFrame([item.__dict__ for item in user_point])
+     percentile_score['total'] = percentile_score['crazeOnPhonicPoints'] + percentile_score['wordKitPoints'] + percentile_score['alphaHopperPoints'] + percentile_score['mazeCrazePoints'] + percentile_score['readingSpreePoints']
+     percentile_score.drop(['_state', 'password'], axis=1, inplace=True)
+     percentile_score['crazeOnPhonicPointsPercentile'] = percentile_score.crazeOnPhonicPoints.rank(pct = True)
+     percentile_score['wordKitPointsPercentile'] = percentile_score.wordKitPoints.rank(pct = True)
+     percentile_score['alphaHopperPointsPercentile'] = percentile_score.alphaHopperPoints.rank(pct = True)
+     percentile_score['mazeCrazePointsPercentile'] = percentile_score.mazeCrazePoints.rank(pct = True)
+     percentile_score['readingSpreePointsPercentile'] = percentile_score.readingSpreePoints.rank(pct = True)
+     percentile_score  = percentile_score.loc[percentile_score['child_id_id'] == int(pk)]
+     return JsonResponse(percentile_score.to_json(orient='records'), safe=False)

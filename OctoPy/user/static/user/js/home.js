@@ -10,7 +10,7 @@ $( document ).ready(function() {
 
     $('#loginSpinner').hide();
 
-    $('#modalLRFormDemo').modal('show')
+    // $('#modalLRFormDemo').modal('show')
 
     $('#login').on( "click", function() {
       $('#modalLRFormDemo').modal('show')
