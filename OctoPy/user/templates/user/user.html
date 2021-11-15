@@ -618,19 +618,23 @@
           <p><strong>Age</strong></p><input type="number" style ="width:220px;"  class="form-control" placeholder="Age" id="user_age" name="user-age" value="{{user.age}}" min="6" max="8">
         </div>
         &nbsp&nbsp&nbsp&nbsp<div class="col-xs-3">
-          <p><strong>Username</strong></p><input type="text" class="form-control" placeholder="Username" id="user_username" name="user-username" value="{{user.username}}" required minlength="1" maxlength="50" readonly>               
+          <p><strong>Username</strong></p><input type="text" class="form-control" placeholder="Username" id="user_username" name="user-username" value="{{user.username}}" required minlength="1" maxlength="50" readonly>     
         </div>
         </div>
 
         <div class="row">
+        &nbsp&nbsp&nbsp&nbsp<div class="col-xs-3">
+          <p><br><strong>Email Address</strong></p><input type="text" class="form-control" placeholder="Email Address" id="user_email" name="user-email" value="{{user.email}}" readonly>     
+        </div>
         &nbsp&nbsp&nbsp&nbsp&nbsp<div class="col-xs-5">
-          <p><br><strong>Change Password</strong></p><input type="password" style ="width:220px;"  class="form-control" placeholder="Update Password" id="user_password" name="user-password" value="{{user.password}}">
+          <p><br><strong>Change Password</strong></p><input type="password" style ="width:220px;" class="form-control" placeholder="Password" id="user_password" name="user-password" value="{{user.password}}" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Password must have Minimum 8 characters, at least 1 letter and 1 number">
         </div>
         </div>
 
         <br>
         <div class="modal-footer" class="modal-header white-text warning-color">
-        <button type="submit" id="user_update" name="user-update" class="btn btn-danger">UPDATE</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">CANCEL</button>
+          <button type="submit" id="user_update" name="user-update" class="btn btn-danger">UPDATE</button>
         </div>
       </div>
       </form>
