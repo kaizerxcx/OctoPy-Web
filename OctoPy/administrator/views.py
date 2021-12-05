@@ -124,6 +124,10 @@ class AdministratorView(View):
             deleteId = request.POST.get("user-idDelete")
             deleteUser = User.objects.filter(user_id= deleteId).delete()            
             return redirect('administrator:administrator_view')  
+        elif 'admin-delete' in request.POST:
+            deleteId = request.POST.get("user-idDelete")
+            deleteUser = User.objects.filter(user_id= deleteId).delete()            
+            return redirect('user:user_welcome_view')
         elif 'feedback-delete' in request.POST:
             feedbackId = request.POST.get("feedback-idDelete")
             feedbackUSer = Feedback.objects.filter(feedback_id = feedbackId).delete()
