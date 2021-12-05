@@ -24,9 +24,24 @@ def getUser(request, pk):
 	serializer = UserSerializer(user, many=True)
 	return Response(serializer.data)
 
+# @api_view(['POST'])
+# def verifyUser(request, username, password):
+#     user_id = -1
+#     md5pass = hashlib.md5(password.encode())
+#     password = md5pass.hexdigest()
+#     now = datetime.now()
+#     users = User.objects.filter(username = username)
+#     for user in users:
+#         if password == user.password:
+#             user_id = user.user_id
+#     # if User.objects.filter(user_id = user_id).exists():
+#     #     Login.objects.create(child_id_id = user_id, lastLogin= now.strftime('%I:%M %p'))
+#     return Response(user_id)
 @api_view(['POST'])
-def verifyUser(request, username, password):
+def verifyUser(request):
     user_id = -1
+    username = request.POST.get("username")
+    password = request.POST.get("password")
     md5pass = hashlib.md5(password.encode())
     password = md5pass.hexdigest()
     now = datetime.now()
@@ -34,30 +49,29 @@ def verifyUser(request, username, password):
     for user in users:
         if password == user.password:
             user_id = user.user_id
-    # if User.objects.filter(user_id = user_id).exists():
-    #     Login.objects.create(child_id_id = user_id, lastLogin= now.strftime('%I:%M %p'))
+    if User.objects.filter(user_id = user_id).exists():
+        Login.objects.create(child_id_id = user_id, lastLogin= now.strftime('%I:%M %p'))
     return Response(user_id)
+# @api_view(['POST'])
+# def registerUser(request, firstname, lastname, age, username, email, password):
+#     md5pass = hashlib.md5(password.encode())
+#     password = md5pass.hexdigest()
+#     user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, email = email, password = password)
+#     Points.objects.create(child_id_id = user.child_id)
+#     return Response("ok")
 
-@api_view(['POST'])
-def registerUser(request, firstname, lastname, age, username, email, password):
-    md5pass = hashlib.md5(password.encode())
-    password = md5pass.hexdigest()
-    user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, email = email, password = password)
-    Points.objects.create(child_id_id = user.child_id)
-    return Response("ok")
-
-@api_view(['POST'])
-def updateUser(request, user_id, firstname, lastname, age, username, email, password):
-    str = password
-    md5pass = hashlib.md5(password.encode())
-    password = md5pass.hexdigest()
-    if str:
-        update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, email = email, password = password)
-    else:
-        update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, email = email)
-    user = User.objects.filter(user_id= user_id)
-    serializer = UserSerializer(user, many=True)
-    return Response(serializer.data)
+# @api_view(['POST'])
+# def updateUser(request, user_id, firstname, lastname, age, username, email, password):
+#     str = password
+#     md5pass = hashlib.md5(password.encode())
+#     password = md5pass.hexdigest()
+#     if str:
+#         update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, email = email, password = password)
+#     else:
+#         update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, email = email)
+#     user = User.objects.filter(user_id= user_id)
+#     serializer = UserSerializer(user, many=True)
+#     return Response(serializer.data)
 
 @api_view(['POST'])
 def deleteUser(request, user_id):
@@ -119,3 +133,84 @@ def getPercentile(request, pk):
      percentile_score['readingSpreePointsPercentile'] = percentile_score.readingSpreePoints.rank(pct = True)
      percentile_score  = percentile_score.loc[percentile_score['child_id_id'] == int(pk)]
      return JsonResponse(percentile_score.to_json(orient='records'), safe=False)
+
+@api_view(['POST'])
+def registerUser(request):
+    firstname = request.POST.get("firstname")
+    lastname = request.POST.get("lastname")
+    age = request.POST.get("age")
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+    email = request.POST.get("email")  
+    md5pass = hashlib.md5(password.encode())
+    password = md5pass.hexdigest()
+    user = Child.objects.create(firstname = firstname,lastname = lastname, age = age, username = username, email = email, password = password)
+    Points.objects.create(child_id_id = user.child_id)
+    return Response("ok")
+
+
+@api_view(['POST'])
+def updateUser(request):
+    user_id = request.POST.get("user_id")
+    firstname = request.POST.get("firstname")
+    lastname = request.POST.get("lastname")
+    age = request.POST.get("age")
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+    email = request.POST.get("email")  
+    str = password
+    md5pass = hashlib.md5(password.encode())
+    password = md5pass.hexdigest()
+    if str:
+        update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, email = email, password = password)
+    else:
+        update = User.objects.filter(user_id = user_id).update(firstname = firstname, lastname = lastname, age = age, username = username, email = email)
+    user = User.objects.filter(user_id= user_id)
+    serializer = UserSerializer(user, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def updatecrazeOnPhonicPoints(request):
+    child_id_id = request.POST.get("child_id_id")
+    receive_point = request.POST.get("receive_point")
+    points = Points.objects.filter(child_id_id=child_id_id)
+    for point in points:
+        Points.objects.filter(child_id_id=int(child_id_id)).update(crazeOnPhonicPoints = point.crazeOnPhonicPoints + int(receive_point))
+    return Response("ok")
+
+@api_view(['POST'])
+def updatewordKitPoints(request):
+    child_id_id = request.POST.get("child_id_id")
+    receive_point = request.POST.get("receive_point")
+    points = Points.objects.filter(child_id_id=child_id_id)
+    for point in points:
+        Points.objects.filter(child_id_id=int(child_id_id)).update(wordKitPoints = point.wordKitPoints + int(receive_point))
+    return Response("ok")
+
+@api_view(['POST'])
+def updatealphaHopperPoints(request):
+    child_id_id = request.POST.get("child_id_id")
+    receive_point = request.POST.get("receive_point")
+    points = Points.objects.filter(child_id_id=child_id_id)
+    for point in points:
+        Points.objects.filter(child_id_id=int(child_id_id)).update(alphaHopperPoints = point.alphaHopperPoints + int(receive_point))
+    return Response("ok")
+
+
+@api_view(['POST'])
+def updatemazeCrazePoints(request):
+    child_id_id = request.POST.get("child_id_id")
+    receive_point = request.POST.get("receive_point")
+    points = Points.objects.filter(child_id_id=child_id_id)
+    for point in points:
+        Points.objects.filter(child_id_id=int(child_id_id)).update(mazeCrazePoints = point.mazeCrazePoints + int(receive_point))
+    return Response("ok")
+
+@api_view(['POST'])
+def updatereadingSpreePoints(request):
+    child_id_id = request.POST.get("child_id_id")
+    receive_point = request.POST.get("receive_point")
+    points = Points.objects.filter(child_id_id=child_id_id)
+    for point in points:
+        Points.objects.filter(child_id_id=int(child_id_id)).update(readingSpreePoints = point.readingSpreePoints + int(receive_point))
+    return Response("ok")
