@@ -383,7 +383,7 @@
                   <a class="dropdown-item">Logout</a>
                   </form>
                 <a class="dropdown-item" href="#" data-toggle="modal" href="#" data-target="#update_user-{{user.user_id}}">My Account</a>
-                <a class="dropdown-item" href="#" data-toggle="modal" href="#" data-target="#delete_user-{{user.user_id}}">Delete My Account</a>           
+                <a class="dropdown-item" href="#" data-toggle="modal" href="#" data-target="#delete_admin-{{user.user_id}}">Delete My Account</a>           
                 </div>
               </li>
 
@@ -452,7 +452,7 @@
 
  {% for user in users %}
   <!-- Delete User Information Modal -->
- <div class="modal fade" id="delete_user-{{users.user_id}}" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+ <div class="modal fade" id="delete_admin-{{users.user_id}}" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
     <div class="modal-content" >
       <div class="modal-header white-text primary-color">
