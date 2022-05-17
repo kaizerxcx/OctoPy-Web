@@ -3,4 +3,4 @@ OctoPy administrator will be responsible for the dashboard for users peak time a
 
 ![alt text](https://raw.githubusercontent.com/kaizerxcx/OctoPy-Web/master/welcome_page.png) 
 
-![alt text](https://raw.githubusercontent.com/kaizerxcx/OctoPy-Web/master/welcome_page.png) 
+![alt text](https://raw.githubusercontent.com/kaizerxcx/OctoPy-Web/master/dashboard_overview.png) 
